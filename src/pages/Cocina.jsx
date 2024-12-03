@@ -5,7 +5,7 @@ import BtnAdd from "../assets/btnAdd.svg?react";
 import { useDispatch, useSelector } from "react-redux";
 import socketService from "../services/socketService";
 
-
+const socket = io("https://socketserver-u5si.onrender.com/");
 
 
 export const Cocina = () => {
