@@ -5,6 +5,7 @@
   h3{
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
   }
   .oculto {
     display: none;
@@ -50,8 +51,6 @@
         h3 {
           color: #fff;
           font-size: 1rem;
-          font-weight: bold;
-          text-align: center;
           margin-bottom: 10px; // Añade espacio bajo el título para separación
         }
       }
@@ -60,10 +59,9 @@
     button {
       color: #fff;
       background-color: transparent;
-      border: 1px solid #fff;
+      border: 1px solid #ffffff73;
       padding: 5px 10px;
       font-size: 0.9rem;
-      font-weight: bold; // Simplificado en lugar de "bolder"
       text-transform: capitalize;
       cursor: pointer;
       border-radius: 10px;

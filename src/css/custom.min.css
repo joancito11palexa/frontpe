@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Lexend:wght@100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11985,6 +11986,7 @@ textarea.form-control-lg {
 .MeseraPage h3, .MeseraPage .h3 {
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .MeseraPage .oculto {
   display: none;
@@ -12013,7 +12015,7 @@ textarea.form-control-lg {
   flex: 1;
 }
 .MeseraPage .platos-buttons .container-menu .box {
-  background-color: #ba520a;
+  background-color: rgba(60, 65, 68, 0);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -12026,28 +12028,25 @@ textarea.form-control-lg {
 .MeseraPage .platos-buttons .container-menu .box h3, .MeseraPage .platos-buttons .container-menu .box .h3 {
   color: #fff;
   font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
   margin-bottom: 10px;
 }
 .MeseraPage .platos-buttons button {
   color: #fff;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4509803922);
   padding: 5px 10px;
   font-size: 0.9rem;
-  font-weight: bold;
   text-transform: capitalize;
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 .MeseraPage .platos-buttons button:hover {
-  background-color: #ea670d;
+  background-color: rgba(84, 91, 95, 0);
 }
 .MeseraPage .formularioDePedidos {
   padding: 15px;
-  background-color: #8f740b;
+  background-color: rgba(143, 117, 11, 0.1294117647);
   border-radius: 10px;
 }
 .MeseraPage .formularioDePedidos .boxioContainer {
@@ -12078,7 +12077,7 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 .MeseraPage .formularioDePedidos button {
-  background-color: #ba520a;
+  background-color: rgba(60, 65, 68, 0);
   border-radius: 5px;
   border: none;
   padding: 5px 10px;
@@ -12092,7 +12091,7 @@ textarea.form-control-lg {
   align-items: baseline;
 }
 .MeseraPage .contenedorPedidos .pedido {
-  background-color: #ba520a;
+  background-color: rgba(60, 65, 68, 0);
   border-radius: 0px 20px 20px 20px;
   display: flex;
   align-items: center;
@@ -12288,7 +12287,7 @@ textarea.form-control-lg {
   align-items: center;
 }
 .CocinaPage .pedidos .pedidoLista .pedidoItem {
-  background-color: #ba520a;
+  background-color: rgba(60, 65, 68, 0);
   margin-bottom: 10px;
   padding: 10px;
   flex-wrap: wrap;
@@ -12315,7 +12314,7 @@ textarea.form-control-lg {
   background-color: #fcc354;
 }
 .CocinaPage .pedidos .pedidoLista .entregado {
-  background-color: #23312a;
+  background-color: #262A2C;
 }
 .CocinaPage .platosDisponibles {
   display: flex;
@@ -12353,7 +12352,7 @@ textarea.form-control-lg {
   flex-wrap: wrap;
 }
 .gananciasPage .opcionesButtons button {
-  background-color: #ba520a;
+  background-color: rgba(60, 65, 68, 0);
   color: white;
   padding: 5px 10px;
   border: none;
@@ -12377,7 +12376,7 @@ textarea.form-control-lg {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: #8f740b;
+  background-color: rgba(143, 117, 11, 0.1294117647);
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -12416,7 +12415,7 @@ textarea.form-control-lg {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Lexend", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 button,
@@ -12429,7 +12428,7 @@ button {
 }
 
 body {
-  background-color: #23312a;
+  background-color: #262A2C;
   color: white;
 }
 
@@ -12456,7 +12455,7 @@ body {
   display: block;
   margin: 0;
   font-size: 4rem;
-  color: #ba520a;
+  color: rgba(60, 65, 68, 0);
   font-family: "Roboto", sans-serif;
 }
 .menu-container .row-comidas {
