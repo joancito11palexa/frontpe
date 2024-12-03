@@ -1,0 +1,222 @@
+@import "./variables";
+
+.MeseraPage {
+  font-family: "Arial", sans-serif;
+  h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .oculto {
+    display: none;
+  }
+  padding: 20px;
+  .tituloPrincipal {
+    color: $text-color;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 80px 0 80px 0;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  .platos-buttons {
+    margin: 0;
+  
+    .container-menu {
+      display: flex; // Asegura que se comporte como contenedor flexible
+      justify-content: baseline;
+      align-items: stretch; // Estira las columnas a la misma altura
+  
+      .padding {
+        padding: 5px;
+        display: flex;
+        flex: 1; // Asegura que las columnas ocupen el mismo espacio
+      }
+  
+      .box {
+        background-color: $secondary-color;
+        flex: 1;
+        display: flex;
+        flex-direction: column; // Mejor estructura para su contenido
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px;
+        border-radius: 10px;
+        min-height: 100%; // Altura dinámica igual a la más alta
+        
+        h3 {
+          color: #fff;
+          font-size: 1rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 10px; // Añade espacio bajo el título para separación
+        }
+      }
+    }
+  
+    button {
+      color: #fff;
+      background-color: transparent;
+      border: 1px solid #fff;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      font-weight: bold; // Simplificado en lugar de "bolder"
+      text-transform: capitalize;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($secondary-color, 10%);
+      }
+    }
+  }
+  
+
+  
+  .formularioDePedidos {
+    padding: 15px;
+    background-color: $otro-color;
+    border-radius: 10px;
+    .boxioContainer {
+      display: flex;
+      flex-direction: row;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      .boxi {
+        display: flex;
+        justify-content: baseline;
+        align-items: center;
+        gap: 10px;
+        .cantidad {
+          color: black;
+          background-color: white;
+          border-radius: 5px;
+          margin: 0;
+          padding: 0;
+          padding: 5px 12px;
+        }
+      }
+    }
+    .totalPedido {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    button {
+      background-color: $secondary-color;
+      border-radius: 5px;
+      border: none;
+      padding: 5px 10px;
+      color: $text-color;
+    }
+  }
+
+  .contenedorPedidos {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: baseline;
+    .pedido {
+      background-color: $secondary-color;
+      border-radius: 0px 20px 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px 20px;
+      position: relative;
+      .data {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        justify-content: space-between;
+        width: 100%;
+        strong {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          display: block;
+        }
+        .col-6{
+          padding-left: 5px;
+        }
+        .total {
+          display: block;
+          margin-top: 20px;
+          width: 100%;
+        }
+      }
+      .estado {
+        margin: 0;
+        border-radius: 0 0px 20px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+      .pendiente {
+        background-color: $tercer-color;
+      }
+      .entregado {
+        background-color: $primary-color;
+      }
+      strong {
+        font-size: 16px;
+      }
+      .botones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        button {
+          background-color: rgba(255, 255, 255, 0);
+          margin-left: 10px;
+          padding: 15px 10px;
+          border: none;
+          border-radius: 50%;
+        }
+        .btnEntregado {
+          padding: 0;
+          margin: 10px;
+          overflow: visible;
+          svg {
+            overflow: visible;
+            fill: $tercer-color;
+            width: 30px;
+            height: 30px;
+            stroke: $tercer-color;
+            stroke-width: 1px;
+          }
+        }
+        .btnEliminar {
+          padding: 0;
+          margin: 10px;
+          svg {
+            overflow: visible;
+            fill: $tercer-color;
+            width: 30px;
+            height: 30px;
+            stroke: $tercer-color;
+            stroke-width: 1px;
+          }
+        }
+      }
+    }
+  }
+}

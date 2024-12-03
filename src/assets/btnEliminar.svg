@@ -1,0 +1,21 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+  preserveAspectRatio="xMidYMid meet"
+  version={1.0}
+  viewBox="0.0 0.0 32.0 32.0"
+  zoomAndPan="magnify"
+   fill = "rgb(84, 84, 84)" 
+  original_string_length={616}
+>
+  <g id="__id9_sf18ql7b2j">
+    <path
+      d="M16,32C7.178,32,0,24.822,0,16S7.178,0,16,0s16,7.178,16,16S24.822,32,16,32z M16,2C8.28,2,2,8.28,2,16s6.28,14,14,14 s14-6.28,14-14S23.72,2,16,2z"
+      fill = "inherit" 
+    />
+    <path
+      d="M24.707 8.707L23.293 7.293 16 14.586 8.707 7.293 7.293 8.707 14.586 16 7.293 23.293 8.707 24.707 16 17.414 23.293 24.707 24.707 23.293 17.414 16z"
+      fill = "inherit" 
+    />
+  </g>
+</svg>

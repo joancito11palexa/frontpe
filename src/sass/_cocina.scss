@@ -1,0 +1,170 @@
+.CocinaPage {
+  font-family: "Arial", sans-serif;
+  color: white;
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 50px 0 50px 0px;
+  }
+
+  .btn-modalCrearPlato {
+    padding: 0;
+    margin: 0;
+    svg {
+      fill: white;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  #crearPlatoModal {
+    .modal-content {
+      padding: 51px;
+      background-color: #6b0504;
+      border-radius: 0;
+
+      form {
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+
+        div {
+          margin-bottom: 15px;
+
+          label {
+            display: block;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+          }
+        }
+
+        button {
+          background-color: #ffffff;
+          color: rgb(0, 0, 0);
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s;
+        }
+      }
+    }
+  }
+
+  h2 {
+    color: #ffffff;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .nombrePrecio {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      strong {
+        font-size: 16px;
+      }
+
+      button {
+        margin-left: 10px;
+        background-color: #6b0504;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 15px;
+        color: white;
+      }
+    }
+  }
+
+  .pedidos {
+    .pedidoLista {
+      display: flex;
+      align-items: center;
+      .pedidoItem {
+        background-color: $secondary-color;
+        margin-bottom: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        .subLista {
+          p {
+            border-left: 1px solid white;
+            padding-left: 5px;
+            margin: 0;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .pedidoEstado {
+        padding: 10px 20px;
+        margin: 0;
+        margin-top: 10px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+      .pendiente {
+        background-color: $yelloww;
+      }
+      .entregado {
+        background-color: $background-color;
+      }
+    }
+  }
+  .platosDisponibles {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    .boxPlato {
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 15px;
+      .nombrePrecio {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      button {
+        background-color: $alertaColor;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+      }
+    }
+  }
+}

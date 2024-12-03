@@ -1,0 +1,33 @@
+.gananciasPage {
+  padding-top: 50px;
+  color: white !important;
+  .opcionesButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    button {
+      background-color: $secondary-color;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 10px;
+    }
+  }
+  .containerPie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    margin: 0 auto; 
+    width: 50%;
+  }
+  @media (max-width: 800px) {
+    .containerPie {
+      width: 95%; /* Ancho para pantallas más pequeñas (móviles) */
+    }
+  }
+}
