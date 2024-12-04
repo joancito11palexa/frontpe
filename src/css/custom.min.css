@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Lexend:wght@100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300..700&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11980,13 +11981,16 @@ textarea.form-control-lg {
 }
 
 .MeseraPage {
-  font-family: "Arial", sans-serif;
-  padding: 20px;
+  padding: 15px;
 }
 .MeseraPage h3, .MeseraPage .h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-family: "Cabin", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 .MeseraPage .oculto {
   display: none;
@@ -12010,7 +12014,7 @@ textarea.form-control-lg {
   align-items: stretch;
 }
 .MeseraPage .platos-buttons .container-menu .padding {
-  padding: 5px;
+  padding: 1px;
   display: flex;
   flex: 1;
 }
@@ -12032,14 +12036,15 @@ textarea.form-control-lg {
 }
 .MeseraPage .platos-buttons button {
   color: #fff;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4509803922);
+  background-color: rgba(143, 117, 11, 0.1294117647);
+  border: 1px solid rgba(255, 255, 255, 0);
   padding: 5px 10px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  text-align: left;
 }
 .MeseraPage .platos-buttons button:hover {
   background-color: rgba(84, 91, 95, 0);
@@ -12053,23 +12058,33 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: row;
 }
+.MeseraPage .formularioDePedidos .boxioContainer h4, .MeseraPage .formularioDePedidos .boxioContainer .h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
 .MeseraPage .formularioDePedidos .row {
   display: flex;
   flex-direction: row;
 }
 .MeseraPage .formularioDePedidos .row .boxi {
   display: flex;
-  justify-content: baseline;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  font-size: 0.8rem;
 }
 .MeseraPage .formularioDePedidos .row .boxi .cantidad {
   color: black;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   margin: 0;
   padding: 0;
   padding: 5px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .MeseraPage .formularioDePedidos .totalPedido {
   margin-top: 20px;
@@ -12077,11 +12092,11 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 .MeseraPage .formularioDePedidos button {
-  background-color: rgba(60, 65, 68, 0);
+  background-color: white;
   border-radius: 5px;
   border: none;
   padding: 5px 10px;
-  color: white;
+  color: black;
 }
 .MeseraPage .contenedorPedidos {
   padding: 0;
@@ -12091,7 +12106,7 @@ textarea.form-control-lg {
   align-items: baseline;
 }
 .MeseraPage .contenedorPedidos .pedido {
-  background-color: rgba(60, 65, 68, 0);
+  background-color: rgba(143, 117, 11, 0.1294117647);
   border-radius: 0px 20px 20px 20px;
   display: flex;
   align-items: center;

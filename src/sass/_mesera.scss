@@ -1,21 +1,25 @@
 @import "./variables";
 
 .MeseraPage {
-  font-family: "Arial", sans-serif;
-  h3{
-    margin-top: 10px;
-    margin-bottom: 10px;
+  h3 {
+    font-family: "Cabin", sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
   }
   .oculto {
     display: none;
   }
-  padding: 20px;
+  padding: 15px;
   .tituloPrincipal {
     color: $text-color;
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+
     padding: 80px 0 80px 0;
   }
 
@@ -25,18 +29,18 @@
 
   .platos-buttons {
     margin: 0;
-  
+
     .container-menu {
       display: flex; // Asegura que se comporte como contenedor flexible
       justify-content: baseline;
       align-items: stretch; // Estira las columnas a la misma altura
-  
+
       .padding {
-        padding: 5px;
+        padding: 1px;
         display: flex;
         flex: 1; // Asegura que las columnas ocupen el mismo espacio
       }
-  
+
       .box {
         background-color: $secondary-color;
         flex: 1;
@@ -47,34 +51,34 @@
         padding: 10px;
         border-radius: 10px;
         min-height: 100%; // Altura dinámica igual a la más alta
-        
+
         h3 {
           color: #fff;
+
           font-size: 1rem;
           margin-bottom: 10px; // Añade espacio bajo el título para separación
         }
       }
     }
-  
+
     button {
       color: #fff;
-      background-color: transparent;
-      border: 1px solid #ffffff73;
+      background-color: $otro-color;
+
+      border: 1px solid #ffffff00;
       padding: 5px 10px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       text-transform: capitalize;
       cursor: pointer;
       border-radius: 10px;
       transition: background-color 0.3s ease;
-
+      text-align: left;
       &:hover {
         background-color: lighten($secondary-color, 10%);
       }
     }
   }
-  
 
-  
   .formularioDePedidos {
     padding: 15px;
     background-color: $otro-color;
@@ -82,22 +86,34 @@
     .boxioContainer {
       display: flex;
       flex-direction: row;
+      h4 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
     }
     .row {
       display: flex;
       flex-direction: row;
       .boxi {
+
         display: flex;
-        justify-content: baseline;
+        justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        font-size: 0.8rem;
         .cantidad {
           color: black;
           background-color: white;
-          border-radius: 5px;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
           margin: 0;
           padding: 0;
           padding: 5px 12px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -107,11 +123,11 @@
       font-weight: bold;
     }
     button {
-      background-color: $secondary-color;
+      background-color: white;
       border-radius: 5px;
       border: none;
       padding: 5px 10px;
-      color: $text-color;
+      color: black;
     }
   }
 
@@ -122,7 +138,7 @@
     color: white;
     align-items: baseline;
     .pedido {
-      background-color: $secondary-color;
+      background-color: $otro-color;
       border-radius: 0px 20px 20px 20px;
       display: flex;
       align-items: center;
@@ -143,7 +159,7 @@
           font-weight: bold;
           display: block;
         }
-        .col-6{
+        .col-6 {
           padding-left: 5px;
         }
         .total {
