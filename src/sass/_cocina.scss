@@ -113,7 +113,7 @@
       display: flex;
       align-items: center;
       .pedidoItem {
-        background-color: $secondary-color;
+        background-color: $otro-color;
         margin-bottom: 10px;
         padding: 10px;
         flex-wrap: wrap;
@@ -134,6 +134,7 @@
         margin-top: 10px;
         text-align: center;
         color: black;
+        border-radius: 10px;
         font-weight: bold;
         font-size: 1rem;
         text-transform: uppercase;

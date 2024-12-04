@@ -12099,7 +12099,7 @@ textarea.form-control-lg {
   color: black;
 }
 .MeseraPage .contenedorPedidos {
-  padding: 0;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   color: white;
@@ -12112,7 +12112,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 20px 10px;
   position: relative;
 }
 .MeseraPage .contenedorPedidos .pedido .data {
@@ -12123,14 +12123,20 @@ textarea.form-control-lg {
   justify-content: space-between;
   width: 100%;
 }
+.MeseraPage .contenedorPedidos .pedido .data .principales {
+  border-radius: 0px;
+  border-right: 1px solid white;
+}
 .MeseraPage .contenedorPedidos .pedido .data p {
   margin-bottom: 3px;
 }
 .MeseraPage .contenedorPedidos .pedido .data strong {
-  font-size: 0.8rem;
+  font-family: "cabin";
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: bold;
   display: block;
+  border-bottom: 1px solid white;
 }
 .MeseraPage .contenedorPedidos .pedido .data .col-6 {
   padding-left: 5px;
@@ -12144,6 +12150,7 @@ textarea.form-control-lg {
   color: black;
   padding: 5px 15px;
   border-radius: 10px;
+  font-weight: bold;
 }
 .MeseraPage .contenedorPedidos .pedido .estado {
   margin: 0;
@@ -12311,7 +12318,7 @@ textarea.form-control-lg {
   align-items: center;
 }
 .CocinaPage .pedidos .pedidoLista .pedidoItem {
-  background-color: rgba(60, 65, 68, 0);
+  background-color: #963903;
   margin-bottom: 10px;
   padding: 10px;
   flex-wrap: wrap;
@@ -12330,12 +12337,13 @@ textarea.form-control-lg {
   margin-top: 10px;
   text-align: center;
   color: black;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 1rem;
   text-transform: uppercase;
 }
 .CocinaPage .pedidos .pedidoLista .pendiente {
-  background-color: #fcc354;
+  background-color: #e4a323;
 }
 .CocinaPage .pedidos .pedidoLista .entregado {
   background-color: #262A2C;
@@ -12413,7 +12421,9 @@ textarea.form-control-lg {
   height: 40px;
 }
 .navBarComponent .offcanvas {
-  background-color: #fcf7ec;
+  background-color: #963903;
+  border-radius: 0;
+  color: white;
 }
 .navBarComponent .offcanvas ul {
   list-style: none;
@@ -12423,8 +12433,11 @@ textarea.form-control-lg {
   padding: 0;
 }
 .navBarComponent .offcanvas ul li a {
-  color: black;
+  border-radius: 0;
+  border-left: 3px solid white;
+  color: white;
   text-decoration: none;
+  margin-bottom: 15px;
 }
 
 .footerComponent {

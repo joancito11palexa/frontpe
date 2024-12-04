@@ -10,21 +10,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    svg{
-        width: 40px;
-        height: 40px;
+    svg {
+      width: 40px;
+      height: 40px;
     }
   }
   .offcanvas {
-    background-color: #fcf7ec;
+    background-color: $otro-color;
+    border-radius: 0;
+    color: white;
     ul {
       list-style: none;
       padding: 0;
       li {
         padding: 0;
         a {
-          color: black;
+          border-radius: 0;
+          border-left: 3px solid white;
+          color: white;
           text-decoration: none;
+          margin-bottom: 15px;
         }
       }
     }

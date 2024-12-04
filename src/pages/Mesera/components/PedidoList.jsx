@@ -19,8 +19,8 @@ export const PedidoList = ({
       >
         <div className="pedido">
           <div className="data">
-            <div className="col-6">
-              <strong>Plato Principal:</strong>
+            <div className="col-6 principales">
+              <strong>Principales:</strong>
               {pedido.descripcion?.platoPrincipal?.length > 0
                 ? pedido.descripcion.platoPrincipal.map((p, idx) => (
                     <p key={idx}>
@@ -29,7 +29,7 @@ export const PedidoList = ({
                   ))
                 : "No hay platos principales"}
             </div>
-            <div className="col-6">
+            <div className="col-6 ">
               <strong>Entradas:</strong>
               {pedido.descripcion?.entradas &&
               Array.isArray(pedido.descripcion.entradas) &&
@@ -43,7 +43,7 @@ export const PedidoList = ({
             </div>
             <div className="col-12 total">
               <p>
-                <strong>Total:</strong> S/.{pedido.total || 0}
+                Total: S/.{pedido.total || 0}
               </p>
             </div>
             <p className={`estado ${pedido.estado}`}>{pedido.estado}</p>
