@@ -6,8 +6,8 @@
     margin-top: 40px;
     margin-bottom: 20px;
     text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: lighter;
+    font-size: 2rem;
     text-transform: uppercase;
   }
   .oculto {
@@ -153,6 +153,9 @@
         padding-top: 20px;
         justify-content: space-between;
         width: 100%;
+        p{
+          margin-bottom: 3px;
+        }
         strong {
           font-size: 0.8rem;
           text-transform: uppercase;
@@ -163,9 +166,15 @@
           padding-left: 5px;
         }
         .total {
-          display: block;
-          margin-top: 20px;
-          width: 100%;
+          display: flex;
+          margin-top: 50px;
+          p{
+            background-color: white;
+            color : black;
+            padding: 5px 15px;
+            border-radius: 10px;
+          }
+         
         }
       }
       .estado {
@@ -180,7 +189,8 @@
         text-transform: capitalize;
       }
       .pendiente {
-        background-color: $tercer-color;
+        background-color: white;
+        color: black;
       }
       .entregado {
         background-color: $primary-color;
@@ -211,10 +221,10 @@
           overflow: visible;
           svg {
             overflow: visible;
-            fill: $tercer-color;
+            fill: white;
             width: 30px;
             height: 30px;
-            stroke: $tercer-color;
+            stroke: white;
             stroke-width: 1px;
           }
         }
@@ -223,10 +233,10 @@
           margin: 10px;
           svg {
             overflow: visible;
-            fill: $tercer-color;
+            fill: white;
             width: 30px;
             height: 30px;
-            stroke: $tercer-color;
+            stroke: white;
             stroke-width: 1px;
           }
         }

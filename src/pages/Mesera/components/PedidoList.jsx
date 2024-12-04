@@ -41,7 +41,7 @@ export const PedidoList = ({
                   ))
                 : "No hay entradas"}
             </div>
-            <div className="col-12">
+            <div className="col-12 total">
               <p>
                 <strong>Total:</strong> S/.{pedido.total || 0}
               </p>

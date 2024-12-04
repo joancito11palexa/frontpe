@@ -11988,8 +11988,8 @@ textarea.form-control-lg {
   margin-top: 40px;
   margin-bottom: 20px;
   text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: lighter;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 .MeseraPage .oculto {
@@ -12036,7 +12036,7 @@ textarea.form-control-lg {
 }
 .MeseraPage .platos-buttons button {
   color: #fff;
-  background-color: rgba(143, 117, 11, 0.1294117647);
+  background-color: #963903;
   border: 1px solid rgba(255, 255, 255, 0);
   padding: 5px 10px;
   font-size: 0.8rem;
@@ -12051,7 +12051,7 @@ textarea.form-control-lg {
 }
 .MeseraPage .formularioDePedidos {
   padding: 15px;
-  background-color: rgba(143, 117, 11, 0.1294117647);
+  background-color: #963903;
   border-radius: 10px;
 }
 .MeseraPage .formularioDePedidos .boxioContainer {
@@ -12106,7 +12106,7 @@ textarea.form-control-lg {
   align-items: baseline;
 }
 .MeseraPage .contenedorPedidos .pedido {
-  background-color: rgba(143, 117, 11, 0.1294117647);
+  background-color: #963903;
   border-radius: 0px 20px 20px 20px;
   display: flex;
   align-items: center;
@@ -12123,6 +12123,9 @@ textarea.form-control-lg {
   justify-content: space-between;
   width: 100%;
 }
+.MeseraPage .contenedorPedidos .pedido .data p {
+  margin-bottom: 3px;
+}
 .MeseraPage .contenedorPedidos .pedido .data strong {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -12133,9 +12136,14 @@ textarea.form-control-lg {
   padding-left: 5px;
 }
 .MeseraPage .contenedorPedidos .pedido .data .total {
-  display: block;
-  margin-top: 20px;
-  width: 100%;
+  display: flex;
+  margin-top: 50px;
+}
+.MeseraPage .contenedorPedidos .pedido .data .total p {
+  background-color: white;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 10px;
 }
 .MeseraPage .contenedorPedidos .pedido .estado {
   margin: 0;
@@ -12149,7 +12157,8 @@ textarea.form-control-lg {
   text-transform: capitalize;
 }
 .MeseraPage .contenedorPedidos .pedido .pendiente {
-  background-color: #1a0505;
+  background-color: white;
+  color: black;
 }
 .MeseraPage .contenedorPedidos .pedido .entregado {
   background-color: #555555;
@@ -12182,10 +12191,10 @@ textarea.form-control-lg {
 }
 .MeseraPage .contenedorPedidos .pedido .botones .btnEntregado svg {
   overflow: visible;
-  fill: #1a0505;
+  fill: white;
   width: 30px;
   height: 30px;
-  stroke: #1a0505;
+  stroke: white;
   stroke-width: 1px;
 }
 .MeseraPage .contenedorPedidos .pedido .botones .btnEliminar {
@@ -12194,10 +12203,10 @@ textarea.form-control-lg {
 }
 .MeseraPage .contenedorPedidos .pedido .botones .btnEliminar svg {
   overflow: visible;
-  fill: #1a0505;
+  fill: white;
   width: 30px;
   height: 30px;
-  stroke: #1a0505;
+  stroke: white;
   stroke-width: 1px;
 }
 
@@ -12391,7 +12400,7 @@ textarea.form-control-lg {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: rgba(143, 117, 11, 0.1294117647);
+  background-color: #963903;
   border-radius: 50%;
   height: 50px;
   width: 50px;
