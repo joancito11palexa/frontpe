@@ -112,6 +112,7 @@
     .pedidoLista {
       display: flex;
       align-items: center;
+      padding: 10px;
       .pedidoItem {
         background-color: $otro-color;
         margin-bottom: 10px;

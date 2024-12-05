@@ -12316,6 +12316,7 @@ textarea.form-control-lg {
 .CocinaPage .pedidos .pedidoLista {
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 .CocinaPage .pedidos .pedidoLista .pedidoItem {
   background-color: #963903;

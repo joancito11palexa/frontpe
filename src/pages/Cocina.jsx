@@ -69,7 +69,7 @@ export const Cocina = () => {
 
   return (
     <div className="CocinaPage">
-      {/* <h1>Panel de Cocina</h1> */}
+      <h1>Panel de Cocina</h1> 
 
       <h2>Ganancias Totales:</h2>
       <p>
