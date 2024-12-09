@@ -27,7 +27,7 @@ export const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://socketserver-u5si.onrender.com/api/clientes/", {
+      const response = await axios.post("https://socketserver-u5si.onrender.com/api/login/", {
         email,
         password,
       });
@@ -50,7 +50,7 @@ export const Login = () => {
     }
 
     try {
-      const response = await axios.post("https://socketserver-u5si.onrender.com/api/login/", {
+      const response = await axios.post("https://socketserver-u5si.onrender.com/api/clientes/", {
         nombre,
         email,
         password,
