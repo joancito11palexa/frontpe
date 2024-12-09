@@ -33,6 +33,7 @@ export const Mesera = () => {
   const enviarPedido = () => {
     const { principales, entradas, total } = pedidoActual;
     const descripcion = {
+      clienteId: 2004, // Agregar el ID del cliente por defecto
       platoPrincipal: principales.map((p) => ({
         nombre: p.nombre,
         cantidad: p.cantidad,
@@ -44,10 +45,11 @@ export const Mesera = () => {
         precio: e.precio,
       })),
     };
-
-    socketService.emit("nuevo-pedido", descripcion);
+  
+    socketService.emit("nuevo-pedido", descripcion); // Enviar la descripción con el ID del cliente
     resetPedido();
   };
+  
 
   const handleMarcarEntregado = (pedidoId) =>
     dispatch(updatePedidoEstado(pedidoId));

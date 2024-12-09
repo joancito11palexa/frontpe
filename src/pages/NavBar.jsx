@@ -44,7 +44,7 @@ export const NavBar = () => {
         <div className="offcanvas-body">
           <ul>
             <li>
-              <Link to="/" className="btn btn-link" onClick={closeOffcanvas}>
+              <Link to="/mesera" className="btn btn-link" onClick={closeOffcanvas}>
                 Mesera
               </Link>
             </li>
