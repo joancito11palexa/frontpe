@@ -3,7 +3,7 @@ import { setPedidos } from "../redux/actions/pedidosActions";
 import { setPlatos } from "../redux/actions/platosActions";
 
 // Instancia del socket
-const socket = io("https://socketserver-u5si.onrender.com");
+const socket = io("localhost:4000");
 
 const socketService = {
   connect: () => {

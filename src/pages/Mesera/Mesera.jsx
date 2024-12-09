@@ -45,7 +45,7 @@ export const Mesera = () => {
         precio: e.precio,
       })),
     };
-  
+    console.log(descripcion)
     socketService.emit("nuevo-pedido", descripcion); // Enviar la descripción con el ID del cliente
     resetPedido();
   };

@@ -11972,12 +11972,39 @@ textarea.form-control-lg {
   }
 }
 .loginPage {
+  background-color: #f3f4ed;
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.loginPage .btn-menu {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  background-color: transparent;
+  border: 1px solid #181818;
+}
+.loginPage .card {
+  border: none;
+  border-radius: 20px;
+  background-color: #181818;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.loginPage input {
+  border: none;
+}
+.loginPage .btn-primary {
+  border: 1px solid rgba(255, 255, 255, 0.925);
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff;
+}
+.loginPage .btn-link {
+  color: white;
 }
 
 .MeseraPage {
@@ -12504,6 +12531,15 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+}
+.clientePage .cuentaBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: black;
+  color: white;
+  border: none;
 }
 .clientePage .iconFood1 {
   width: 50px;
