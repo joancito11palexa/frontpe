@@ -12449,6 +12449,53 @@ textarea.form-control-lg {
   align-items: center;
 }
 
+.ventasPage {
+  padding: 15px;
+}
+.ventasPage .encabezado {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.ventasPage .encabezado h3, .ventasPage .encabezado .h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+.ventasPage .encabezado p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.ventasPage .filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.ventasPage .filtros button {
+  border: 3px solid rgba(255, 255, 255, 0.164);
+  color: white;
+  background-color: rgba(255, 255, 255, 0.062);
+}
+.ventasPage .filtros .dropdown .dropdown-menu {
+  border: 3px solid rgba(255, 255, 255, 0.164);
+  background-color: #262A2C;
+}
+.ventasPage .filtros .dropdown li a {
+  color: white;
+}
+.ventasPage .dataRange {
+  font-size: 1rem;
+}
+.ventasPage .cardComponent {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.103);
+  border: 1px solid rgba(255, 255, 255, 0.342);
+  color: white;
+}
+
 * {
   padding: 0;
   margin: 0;

@@ -6,6 +6,7 @@ import { Ganancias } from "./pages/Ganancias/Ganancias";
 import { NavBar } from "./pages/NavBar";
 import { Footer } from "./pages/Footer";
 import { Calculos } from "./pages/Calculos/Calculos";
+import { Ventas } from "./pages/Ventas/Ventas";
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Mesera />} />
         <Route path="/cocina" element={<Cocina />} />
         <Route path="/calculos" element={<Calculos />} />
+        <Route path="/ventas" element={<Ventas />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,50 @@
+.ventasPage {
+  padding: 15px;
+  .encabezado {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    h3 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  }
+  .filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+    button {
+      border: 3px solid rgba(255, 255, 255, 0.164);
+      color: white;
+      background-color: rgba(255, 255, 255, 0.062);
+    }
+    .dropdown {
+      .dropdown-menu {
+        border: 3px solid rgba(255, 255, 255, 0.164);
+        background-color: $background-color;
+      }
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .dataRange {
+    font-size: 1rem;
+  }
+  .cardComponent {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.103);
+    border: 1px solid rgba(255, 255, 255, 0.342);
+    color: white;
+  }
+}

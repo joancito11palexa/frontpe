@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom"; // Importar Link para las rutas
-import BtnBarIcon from './../assets/btnBar.svg?react'
+import BtnBarIcon from './../assets/btnBar.svg?react';
 
 export const NavBar = () => {
+  const offcanvasRef = useRef(null);
+
+  const closeOffcanvas = () => {
+    const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasRef.current);
+    bootstrapOffcanvas.hide();
+  };
+
   return (
     <div className="navBarComponent">
       <button
@@ -12,7 +19,7 @@ export const NavBar = () => {
         data-bs-target="#navBarComponent"
         aria-controls="navBarComponent"
       >
-        <BtnBarIcon/>
+        <BtnBarIcon />
       </button>
 
       <div
@@ -21,6 +28,7 @@ export const NavBar = () => {
         tabIndex="-1"
         id="navBarComponent"
         aria-labelledby="navBarComponentLabel"
+        ref={offcanvasRef} // Asignar la referencia
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="navBarComponentLabel">
@@ -36,18 +44,23 @@ export const NavBar = () => {
         <div className="offcanvas-body">
           <ul>
             <li>
-              <Link to="/" className="btn btn-link">
+              <Link to="/" className="btn btn-link" onClick={closeOffcanvas}>
                 Mesera
               </Link>
             </li>
             <li>
-              <Link to="/cocina" className="btn btn-link">
+              <Link to="/cocina" className="btn btn-link" onClick={closeOffcanvas}>
                 Cocina
               </Link>
             </li>
             <li>
-              <Link to="/estadisticas" className="btn btn-link">
-                Estadisticas
+              <Link to="/estadisticas" className="btn btn-link" onClick={closeOffcanvas}>
+                Estadísticas
+              </Link>
+            </li>
+            <li>
+              <Link to="/ventas" className="btn btn-link" onClick={closeOffcanvas}>
+                Ventas
               </Link>
             </li>
           </ul>

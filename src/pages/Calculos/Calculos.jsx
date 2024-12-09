@@ -10,7 +10,7 @@ export const Calculos = () => {
   useEffect(() => {
     const obtenerListaProductos = async () => {
       try {
-        const response = await fetch('https://socketserver-u5si.onrender.com/obtener-lista-productos');
+        const response = await fetch('http://localhost:4000/obtener-lista-productos');
         if (!response.ok) throw new Error('Error al obtener la lista de productos');
         const data = await response.json();
         setProductos(data);
@@ -42,7 +42,7 @@ export const Calculos = () => {
 
   const obtenerDatos = async () => {
     try {
-      const response = await fetch('https://socketserver-u5si.onrender.com/obtener-precio', {
+      const response = await fetch('http://localhost:4000/obtener-precio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productosSeleccionados }),
