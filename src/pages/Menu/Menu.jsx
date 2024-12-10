@@ -4,6 +4,8 @@ import socketService from "../../services/socketService";
 import Food1Icon from "../../assets/food1Icon.svg?react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
+import loading1 from '../../assets/gifs/loading1.gif';
+
 
 export const Menu = () => {
   const dispatch = useDispatch();
@@ -45,9 +47,8 @@ export const Menu = () => {
       <Food1Icon className="iconFood1" />
       <div className="platos-list">
         {platos.length === 0 ? (
-          <div className="skeleton-loader">
-            <div className="skeleton-item"></div>
-            <div className="skeleton-item"></div>
+          <div className="loader">
+            <img src={loading1} alt="" />
           </div>
         ) : (
           <div>

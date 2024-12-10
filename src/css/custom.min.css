@@ -12555,6 +12555,13 @@ textarea.form-control-lg {
   text-align: center;
   text-transform: capitalize;
 }
+.clientePage .platos-list .loader {
+  text-align: center;
+}
+.clientePage .platos-list .loader img {
+  width: 120px;
+  height: 120px;
+}
 .clientePage .platos-list h4, .clientePage .platos-list .h4 {
   width: 180px;
   display: inline-flex;
