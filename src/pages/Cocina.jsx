@@ -142,12 +142,7 @@ export const Cocina = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">
                 Crear menú
               </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              />
+     
             </div>
             <div className="modal-body">
               <form onSubmit={handleCrearPlato}>
@@ -195,10 +190,7 @@ export const Cocina = () => {
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
+                Cerrar
               </button>
             </div>
           </div>

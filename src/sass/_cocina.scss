@@ -23,14 +23,21 @@
 
   #crearPlatoModal {
     .modal-content {
-      padding: 51px;
-      background-color: #6b0504;
+      padding: 20px;
+      background-color: #181818;
       border-radius: 0;
-
+      .modal-header{
+        border: none;
+      }
+      .modal-body{
+        border: none;
+      }
+      .modal-footer{
+        border: none;
+      }
       form {
         color: white;
         border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
 
         div {
@@ -41,6 +48,12 @@
             color: #ffffff;
             font-weight: bold;
             margin-bottom: 5px;
+
+          }
+          select{
+            margin-left: 15px;
+            border-radius: 10px;
+            padding: 10px 15px;
           }
 
           input {
@@ -59,6 +72,7 @@
           border-radius: 20px;
           cursor: pointer;
           font-size: 16px;
+          width: 100%;
           transition: background-color 0.3s;
         }
       }

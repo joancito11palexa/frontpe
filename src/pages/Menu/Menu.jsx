@@ -49,6 +49,7 @@ export const Menu = () => {
         {platos.length === 0 ? (
           <div className="loader">
             <img src={loading1} alt="" />
+            <p>Cargando. . .</p>
           </div>
         ) : (
           <div>
