@@ -1,7 +1,13 @@
 import React from "react";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 import { Mesera } from "./pages/Mesera/Mesera";
-import { Cocina } from "./pages/Cocina";
+import { Cocina } from "./pages/Cocina/Cocina";
 import { Ganancias } from "./pages/Ganancias/Ganancias";
 import { NavBar } from "./pages/NavBar";
 import { Footer } from "./pages/Footer";
@@ -10,6 +16,8 @@ import { Ventas } from "./pages/Ventas/Ventas";
 import { Login } from "./pages/Cliente/Login";
 import { Menu } from "./pages/Menu/Menu";
 import { SoloMenu } from "./pages/Cliente/SoloMenu";
+import { NavBarClient } from "./pages/Cliente/NavBarClient";
+import { NotFound } from "./pages/NotFound";
 
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
@@ -24,19 +32,39 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
+const ProtectedRouteAdmin = ({ children }) => {
+  const clienteId = localStorage.getItem("clienteId");
+  const clienteEmail = localStorage.getItem("clienteEmail");
+  const isAdmin = localStorage.getItem("isA");
+
+  if (!clienteId || !clienteEmail || isAdmin !== "true") {
+    return <Navigate to="/*" />; // Replace '/not-found' with your actual NotFound route
+  }
+
+  return children;
+};
+
 function App() {
   const location = useLocation();
 
   // Obtener clienteId y clienteEmail desde localStorage
   const clienteId = localStorage.getItem("clienteId");
   const clienteEmail = localStorage.getItem("clienteEmail");
+  const isAdmin = localStorage.getItem("isA");
+
+  const mostrarNavBar = () => {
+    if (isAdmin == "true") {
+      return <NavBar />;
+    }
+    return <NavBarClient />;
+  };
 
   return (
     <div>
       {/* Mostrar NavBar y Footer solo si no estás en la página de login ni en /ver-menu */}
       {location.pathname !== "/login" &&
-        location.pathname !== "/ver-menu" &&
-        location.pathname !== "/" && <NavBar />}
+        location.pathname !== "/" &&
+        mostrarNavBar()}
 
       <Routes>
         {/* Rutas protegidas */}
@@ -51,43 +79,44 @@ function App() {
         <Route
           path="/estadisticas"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <Ganancias />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
         <Route
           path="/mesera"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <Mesera />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
         <Route
           path="/cocina"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <Cocina />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
         <Route
           path="/calculos"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <Calculos />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
         <Route
           path="/ventas"
           element={
-            <ProtectedRoute>
+            <ProtectedRouteAdmin>
               <Ventas />
-            </ProtectedRoute>
+            </ProtectedRouteAdmin>
           }
         />
+        <Route path="*" element={<NotFound />} />
 
         <Route
           path="/"

@@ -42,7 +42,7 @@ export const SoloMenu = () => {
         <UserIcon1/>
       </button>
       <div className="encabezado">
-        <h3>Solo Menú</h3>
+        <h3>Menú</h3>
         <p className="fecha">{fechaHoy}</p>
       </div>
 

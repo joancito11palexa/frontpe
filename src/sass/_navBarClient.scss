@@ -1,0 +1,39 @@
+.navBarClient {
+
+    .botonParaAbrir {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: $otro-color;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .offcanvas {
+      background-color: $otro-color;
+      border-radius: 0;
+      color: white;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          padding: 0;
+          a {
+            border-radius: 0;
+            border-left: 3px solid white;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+  

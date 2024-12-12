@@ -38,7 +38,8 @@ export const Login = () => {
 
       localStorage.setItem("clienteId", response.data.id);
       localStorage.setItem("clienteEmail", response.data.email);
-      navigate("/mesera");
+      localStorage.setItem("isA", response.data.esAdministrador);
+      navigate("/ver-menu");
     } catch (error) {
       console.error("Error durante el login", error);
       setError("Error en el login: credenciales incorrectas o servidor no disponible.");

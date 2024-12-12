@@ -12613,6 +12613,42 @@ textarea.form-control-lg {
   margin-bottom: 3px;
 }
 
+.navBarClient .botonParaAbrir {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #963903;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navBarClient .botonParaAbrir svg {
+  width: 40px;
+  height: 40px;
+}
+.navBarClient .offcanvas {
+  background-color: #963903;
+  border-radius: 0;
+  color: white;
+}
+.navBarClient .offcanvas ul {
+  list-style: none;
+  padding: 0;
+}
+.navBarClient .offcanvas ul li {
+  padding: 0;
+}
+.navBarClient .offcanvas ul li a {
+  border-radius: 0;
+  border-left: 3px solid white;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12620,13 +12656,9 @@ textarea.form-control-lg {
   font-family: "Space Grotesk", sans-serif;
 }
 
-button,
-div {
-  border-radius: 10px;
-}
-
 button {
   padding: 4px 10px;
+  border-radius: 10px;
 }
 
 body {

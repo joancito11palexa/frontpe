@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 import CountUp from "react-countup";
-import BtnAdd from "../assets/btnAdd.svg?react";
+import BtnAdd from "../../assets/btnAdd.svg?react";
 import { useDispatch, useSelector } from "react-redux";
-import socketService from "../services/socketService";
+import socketService from "../../services/socketService";
 
 const socket = io("https://socketserver-u5si.onrender.com/");
 
-
 export const Cocina = () => {
   const dispatch = useDispatch();
- const pedidos = useSelector((state)=>state.pedidos)
-  const platos = useSelector((state)=>state.platos.platos)
+  const pedidos = useSelector((state) => state.pedidos);
+  const platos = useSelector((state) => state.platos.platos);
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
   const [imagen, setImagen] = useState("");
@@ -69,7 +68,7 @@ export const Cocina = () => {
 
   return (
     <div className="CocinaPage">
-      <h1>Panel de Cocina</h1> 
+      <h1>Panel de Cocina</h1>
 
       <h2>Ganancias Totales:</h2>
       <p>
@@ -86,48 +85,49 @@ export const Cocina = () => {
 
       <h2>Pedidos en Cola:</h2>
       <div className="pedidos">
-  <div className="pedidoLista row">
-    {pedidos
-      .filter((pedido) => pedido.estado === "pendiente") // Filtrar pedidos pendientes
-      .map((pedido, index) => (
-        <div key={index} className="pedidoItem">
-          <div className="col-12">
-            <strong>Plato Principal:</strong>
-            {pedido.descripcion?.platoPrincipal?.length > 0 ? (
-              <div className="subLista">
-                {pedido.descripcion.platoPrincipal.map((plato, idx) => (
-                  <p key={idx} className="subListaItem">
-                    {plato.nombre} (x{plato.cantidad})
-                  </p>
-                ))}
-              </div>
-            ) : (
-              "No hay platos principales"
-            )}
-            <br />
-          </div>
+        <div className="pedidoLista row">
+          {pedidos
+            .filter((pedido) => pedido.estado === "pendiente") // Filtrar pedidos pendientes
+            .map((pedido, index) => (
+              <div key={index} className="pedidoItem">
+                <div className="col-12">
+                  <strong>Plato Principal:</strong>
+                  {pedido.descripcion?.platoPrincipal?.length > 0 ? (
+                    <div className="subLista">
+                      {pedido.descripcion.platoPrincipal.map((plato, idx) => (
+                        <p key={idx} className="subListaItem">
+                          {plato.nombre} (x{plato.cantidad})
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    "No hay platos principales"
+                  )}
+                  <br />
+                </div>
 
-          <div className="col-12">
-            <strong>Entradas:</strong>
-            {pedido.descripcion?.entradas?.length > 0 ? (
-              <div className="subLista">
-                {pedido.descripcion.entradas.map((entrada, idx) => (
-                  <p key={idx} className="subListaItem">
-                    {entrada.nombre} (x{entrada.cantidad})
-                  </p>
-                ))}
-              </div>
-            ) : (
-              "No hay entradas"
-            )}
-          </div>
+                <div className="col-12">
+                  <strong>Entradas:</strong>
+                  {pedido.descripcion?.entradas?.length > 0 ? (
+                    <div className="subLista">
+                      {pedido.descripcion.entradas.map((entrada, idx) => (
+                        <p key={idx} className="subListaItem">
+                          {entrada.nombre} (x{entrada.cantidad})
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    "No hay entradas"
+                  )}
+                </div>
 
-          <p className={`pedidoEstado ${pedido.estado}`}>{pedido.estado}</p>
+                <p className={`pedidoEstado ${pedido.estado}`}>
+                  {pedido.estado}
+                </p>
+              </div>
+            ))}
         </div>
-      ))}
-  </div>
-</div>
-
+      </div>
 
       <div
         className="modal fade"
@@ -142,7 +142,6 @@ export const Cocina = () => {
               <h1 className="modal-title fs-5" id="exampleModalLabel">
                 Crear menú
               </h1>
-     
             </div>
             <div className="modal-body">
               <form onSubmit={handleCrearPlato}>

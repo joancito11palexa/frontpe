@@ -7,6 +7,7 @@
 @import "./footer";
 @import "./ventas";
 @import "./cliente";
+@import "./navBarClient";
 @import "./variables";
 
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
@@ -22,12 +23,11 @@
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
 }
-button,
-div {
-  border-radius: 10px;
-}
+
+
 button {
   padding: 4px 10px;
+  border-radius: 10px;
 }
 
 body {
