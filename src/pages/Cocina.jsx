@@ -11,7 +11,7 @@ const socket = io("https://socketserver-u5si.onrender.com/");
 export const Cocina = () => {
   const dispatch = useDispatch();
  const pedidos = useSelector((state)=>state.pedidos)
-  const platos = useSelector((state)=>state.platos)
+  const platos = useSelector((state)=>state.platos.platos)
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState("");
   const [imagen, setImagen] = useState("");

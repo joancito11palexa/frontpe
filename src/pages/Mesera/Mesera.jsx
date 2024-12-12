@@ -13,7 +13,7 @@ import { usePedidoActual } from "./hooks/usePedidoActual";
 
 export const Mesera = () => {
   const dispatch = useDispatch();
-  const platos = useSelector((state) => state.platos);
+  const platos = useSelector((state) => state.platos.platos);
   const pedidos = useSelector((state) => state.pedidos);
 
   const { pedidoActual, agregarAlPedido, resetPedido } = usePedidoActual();

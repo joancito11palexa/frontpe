@@ -9,7 +9,7 @@ import loading1 from '../../assets/gifs/loading1.gif';
 
 export const Menu = () => {
   const dispatch = useDispatch();
-  const platos = useSelector((state) => state.platos);
+  const platos = useSelector((state) => state.platos.platos);
   const [fechaHoy, setFechaHoy] = useState("");
 
   useEffect(() => {
