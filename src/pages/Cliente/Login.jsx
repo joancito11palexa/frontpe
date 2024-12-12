@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -8,44 +8,54 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [nombre, setNombre] = useState("");
+  const [error, setError] = useState("");
 
-  const clienteId = localStorage.getItem("clienteId");
-  const clienteEmail = localStorage.getItem("clienteEmail");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Si ya está autenticado, redirige automáticamente a mesera
+    const clienteId = localStorage.getItem("clienteId");
+    const clienteEmail = localStorage.getItem("clienteEmail");
+
     if (clienteId && clienteEmail) {
-      return <Navigate to="/mesera" />;
+      navigate("/mesera");
     }
-  }, [clienteId, clienteEmail]);
+  }, [navigate]);
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
+    setError(""); // Limpiar error al cambiar de formulario
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
 
     try {
       const response = await axios.post("https://socketserver-u5si.onrender.com/api/login/", {
         email,
         password,
       });
+
       localStorage.setItem("clienteId", response.data.id);
       localStorage.setItem("clienteEmail", response.data.email);
-      // Redirigir al usuario después de un login exitoso
-      return <Navigate to="/mesera" />;
+      navigate("/mesera");
     } catch (error) {
       console.error("Error durante el login", error);
-      alert("Error en el login");
+      setError("Error en el login: credenciales incorrectas o servidor no disponible.");
     }
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (password !== confirmPassword) {
-      alert("Las contraseñas no coinciden");
+      setError("Las contraseñas no coinciden.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Formato de email no válido.");
       return;
     }
 
@@ -55,14 +65,18 @@ export const Login = () => {
         email,
         password,
       });
+
       localStorage.setItem("clienteId", response.data.id);
       localStorage.setItem("clienteEmail", response.data.email);
-      // Redirigir al usuario después de un registro exitoso
-      return <Navigate to="/mesera" />;
+      navigate("/mesera");
     } catch (error) {
       console.error("Error durante el registro", error);
-      alert("Error en el registro");
+      setError("Error en el registro: usuario ya registrado o servidor no disponible.");
     }
+  };
+
+  const goToMenu = () => {
+    navigate("/");
   };
 
   return (
@@ -70,16 +84,15 @@ export const Login = () => {
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6">
-
-              <button className="btn-menu" onClick={() => (window.location.href = "/ver-menu")}>
-                Solo ver menú
-              </button>
+            <button className="btn-menu" onClick={goToMenu}>
+              Solo ver menú
+            </button>
 
             <div className="card">
               <div className="card-body">
-                <h2 className="text-center">
-                  {isLogin ? "Login" : "Crear Cuenta"}
-                </h2>
+                <h2 className="text-center">{isLogin ? "Login" : "Crear Cuenta"}</h2>
+
+                {error && <div className="alert alert-danger">{error}</div>}
 
                 {isLogin ? (
                   <form onSubmit={handleLogin}>

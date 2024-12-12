@@ -1,7 +1,7 @@
 .clientePage {
   background-color: #f3f4ed;
   border-radius: 0;
-  color: black;
+  color: #112206;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,10 +11,14 @@
     position: absolute;
     top:10px;
     left: 10px;
-    background-color: black;
     color: white;
     border: none;
-
+    background-color: transparent;
+    svg{
+      width: 30px;
+      height: 30px;
+      fill: $tercer-color;
+    }
   }
   .iconFood1 {
     width: 50px;
@@ -35,13 +39,25 @@
 
   .platos-list {
     .loader{
+      padding: 15px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 15px;
       img{
         width: 120px;
         height: 120px;
       }
       p{
         margin-top: 10px;
+      }
+      svg{
+        margin-top: 15px;
+        width: 120px;
+        height: 120px;
+        fill: black;
       }
     }
     h4 {

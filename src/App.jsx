@@ -9,6 +9,7 @@ import { Calculos } from "./pages/Calculos/Calculos";
 import { Ventas } from "./pages/Ventas/Ventas";
 import { Login } from "./pages/Cliente/Login";
 import { Menu } from "./pages/Menu/Menu";
+import { SoloMenu } from "./pages/Cliente/SoloMenu";
 
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
@@ -25,7 +26,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   const location = useLocation();
-  
+
   // Obtener clienteId y clienteEmail desde localStorage
   const clienteId = localStorage.getItem("clienteId");
   const clienteEmail = localStorage.getItem("clienteEmail");
@@ -33,48 +34,83 @@ function App() {
   return (
     <div>
       {/* Mostrar NavBar y Footer solo si no estás en la página de login ni en /ver-menu */}
-      {location.pathname !== "/login" && location.pathname !== "/ver-menu" && location.pathname !== "/" && <NavBar />}
-      
+      {location.pathname !== "/login" &&
+        location.pathname !== "/ver-menu" &&
+        location.pathname !== "/" && <NavBar />}
+
       <Routes>
         {/* Rutas protegidas */}
-        <Route path="/estadisticas" element={
-          <ProtectedRoute>
-            <Ganancias />
-          </ProtectedRoute>
-        } />
-        <Route path="/mesera" element={
-          <ProtectedRoute>
-            <Mesera />
-          </ProtectedRoute>
-        } />
-        <Route path="/cocina" element={
-          <ProtectedRoute>
-            <Cocina />
-          </ProtectedRoute>
-        } />
-        <Route path="/calculos" element={
-          <ProtectedRoute>
-            <Calculos />
-          </ProtectedRoute>
-        } />
-        <Route path="/ventas" element={
-          <ProtectedRoute>
-            <Ventas />
-          </ProtectedRoute>
-        } />
+        <Route
+          path="/ver-menu"
+          element={
+            <ProtectedRoute>
+              <Menu />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/estadisticas"
+          element={
+            <ProtectedRoute>
+              <Ganancias />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mesera"
+          element={
+            <ProtectedRoute>
+              <Mesera />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cocina"
+          element={
+            <ProtectedRoute>
+              <Cocina />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/calculos"
+          element={
+            <ProtectedRoute>
+              <Calculos />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ventas"
+          element={
+            <ProtectedRoute>
+              <Ventas />
+            </ProtectedRoute>
+          }
+        />
 
-        {/* Ruta principal con protección */}
-        <Route path="/" element={clienteId && clienteEmail ? <Menu /> : <Navigate to="/login" />} />
-        
-        {/* Ruta de login */}
-        <Route path="/login" element={clienteId && clienteEmail ? <Navigate to="/" /> : <Login />} />
-
-        {/* Ruta para ver el menú sin necesidad de estar logueado */}
-        <Route path="/ver-menu" element={<Menu />} />
+        <Route
+          path="/"
+          element={
+            clienteId && clienteEmail ? (
+              <Navigate to="/ver-menu" />
+            ) : (
+              <SoloMenu />
+            )
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            clienteId && clienteEmail ? <Navigate to="/ver-menu" /> : <Login />
+          }
+        />
       </Routes>
 
       {/* Mostrar Footer solo si no estás en la página de login ni en /ver-menu */}
-      {location.pathname !== "/login" && location.pathname !== "/ver-menu" && location.pathname !== "/" && <Footer />}
+      {location.pathname !== "/login" &&
+        location.pathname !== "/ver-menu" &&
+        location.pathname !== "/" && <Footer />}
     </div>
   );
 }

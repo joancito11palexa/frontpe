@@ -1,27 +1,44 @@
-import { SET_PLATOS, ADD_PLATO, REMOVE_PLATO, UPDATE_PLATO } from '../actions/platosActions.js';
+import {
+  SET_PLATOS,
+  ADD_PLATO,
+  REMOVE_PLATO,
+  UPDATE_PLATO,
+} from '../actions/platosActions.js';
 
-const initialState = [];
+const initialState = {
+  platos: [],
+  mensaje: null,
+  cargando: false, // Nuevo estado para indicar si se está cargando
+};
 
 const platosReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PLATOS:
-      return action.payload; // Reemplaza el estado de platos con los datos recibidos
-
+      return {
+        platos: action.payload,
+        mensaje: action.payload.length === 0 ? "Aún no se registran platos" : null,
+      };
     case ADD_PLATO:
-      return [...state, action.payload]; // Añade un nuevo plato a la lista
-
+      return {
+        platos: [...state.platos, action.payload],
+        mensaje: null, // Elimina el mensaje al agregar un plato
+      };
     case REMOVE_PLATO:
-      return state.filter((plato) => plato.id !== action.payload); // Elimina un plato por ID
-
+      return {
+        platos: state.platos.filter((plato) => plato.id !== action.payload),
+        mensaje: state.platos.length === 1 ? "Aún no se registran platos" : null, // Actualiza el mensaje solo si queda 1 plato
+      };
     case UPDATE_PLATO:
-      return state.map((plato) =>
-        plato.id === action.payload.id
-          ? { ...plato, ...action.payload } // Actualiza el plato con el nuevo valor
-          : plato
-      );
-
+      return {
+        platos: state.platos.map((plato) =>
+          plato.id === action.payload.id
+            ? { ...plato, ...action.payload }
+            : plato
+        ),
+        mensaje: null, // Elimina el mensaje al actualizar un plato
+      };
     default:
-      return state; // Devuelve el estado actual si no se reconoce la acción
+      return state;
   }
 };
 
