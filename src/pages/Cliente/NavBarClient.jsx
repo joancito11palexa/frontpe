@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom"; // Importar Link para las rutas
-import BtnBarIcon from '../../assets/btnBar.svg?react';
+import BtnBarIcon from "../../assets/btnBar.svg?react";
 
 export const NavBarClient = () => {
   const offcanvasRef = useRef(null);
 
   const closeOffcanvas = () => {
-    const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasRef.current);
+    const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(
+      offcanvasRef.current
+    );
     bootstrapOffcanvas.hide();
   };
 
@@ -43,24 +45,31 @@ export const NavBarClient = () => {
         </div>
         <div className="offcanvas-body">
           <ul>
+          <li>
+              <Link
+                to="/ver-menu"
+                className="btn btn-link"
+                onClick={closeOffcanvas}
+              >
+                Menú
+              </Link>
+            </li>
             <li>
-              <Link to="/mesera" className="btn btn-link" onClick={closeOffcanvas}>
+              <Link
+                to="/mi-cuenta"
+                className="btn btn-link"
+                onClick={closeOffcanvas}
+              >
                 Mi cuenta
               </Link>
             </li>
             <li>
-              <Link to="/cocina" className="btn btn-link" onClick={closeOffcanvas}>
+              <Link
+                to="/mis-pedidos"
+                className="btn btn-link"
+                onClick={closeOffcanvas}
+              >
                 Mis pedidos
-              </Link>
-            </li>
-            <li>
-              <Link to="/estadisticas" className="btn btn-link" onClick={closeOffcanvas}>
-                Estadísticas
-              </Link>
-            </li>
-            <li>
-              <Link to="/ventas" className="btn btn-link" onClick={closeOffcanvas}>
-                Ventas
               </Link>
             </li>
           </ul>

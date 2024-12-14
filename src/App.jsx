@@ -18,6 +18,8 @@ import { Menu } from "./pages/Menu/Menu";
 import { SoloMenu } from "./pages/Cliente/SoloMenu";
 import { NavBarClient } from "./pages/Cliente/NavBarClient";
 import { NotFound } from "./pages/NotFound";
+import { MiCuenta } from "./pages/Cliente/MiCuenta";
+import { MisPedidos } from "./pages/Cliente/MisPedidos";
 
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
@@ -117,7 +119,27 @@ function App() {
           }
         />
         <Route path="*" element={<NotFound />} />
-
+        <Route path="/mi-cuenta" element={<MiCuenta />} />
+        <Route
+          path="/mis-pedidos"
+          element={
+            clienteId && clienteEmail ? (
+              <MisPedidos />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/mi-cuenta"
+          element={
+            clienteId && clienteEmail ? (
+              <MiCuenta />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
         <Route
           path="/"
           element={

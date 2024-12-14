@@ -1,0 +1,38 @@
+.miCuentaPage {
+  height: 100vh;
+  padding: 15px;
+  .perfilData {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .contenedorBox{
+
+        display: flex;
+        gap: 16px; /* Espaciado entre elementos */
+        justify-content: center;
+        align-items: stretch; /* Igualar la altura de los elementos hijos */
+      
+      
+      .col-4 {
+        flex: 1; /* Asegura que las columnas compartan el espacio disponible */
+      }
+      
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra el contenido dentro de la caja */
+        height: 100%; /* Se ajustará a la altura del contenedor */
+        padding: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #ffffff;
+        text-align: center;
+        color: black;
+      }
+  }
+
+}
