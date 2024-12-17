@@ -33,12 +33,7 @@ export const Menu = () => {
 
   return (
     <div className="clientePage">
-      <button
-        className="cuentaBtn"
-        onClick={() => (window.location.href = "/login")}
-      >
-        Cuenta
-      </button>
+
       <div className="encabezado">
         <h3>Menú</h3>
         <p className="fecha">{fechaHoy}</p>

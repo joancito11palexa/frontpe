@@ -39,7 +39,7 @@
 
   .platos-list {
     .loader{
-      padding: 15px;
+      padding: 30px;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -54,10 +54,10 @@
         margin-top: 10px;
       }
       svg{
-        margin-top: 15px;
+        margin-top: 30px;
         width: 120px;
         height: 120px;
-        fill: black;
+        fill: $tercer-color;
       }
     }
     h4 {

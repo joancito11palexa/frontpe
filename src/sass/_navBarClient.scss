@@ -1,5 +1,16 @@
 .navBarClient {
-
+    .logoLink{
+      position: absolute;
+      color: black;
+      font-family: "League Spartan", sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 2rem;
+      top: 5px;
+      left:15px;
+      letter-spacing:-0.094em;
+      
+    }
     .botonParaAbrir {
       position: absolute;
       top: 5px;

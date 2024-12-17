@@ -20,7 +20,7 @@ import { NavBarClient } from "./pages/Cliente/NavBarClient";
 import { NotFound } from "./pages/NotFound";
 import { MiCuenta } from "./pages/Cliente/MiCuenta";
 import { MisPedidos } from "./pages/Cliente/MisPedidos";
-
+import { LoaderPage } from "./pages/LoaderPage/LoaderPage";
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
   const clienteId = localStorage.getItem("clienteId");
@@ -119,7 +119,6 @@ function App() {
           }
         />
         <Route path="*" element={<NotFound />} />
-        <Route path="/mi-cuenta" element={<MiCuenta />} />
         <Route
           path="/mis-pedidos"
           element={
@@ -133,18 +132,14 @@ function App() {
         <Route
           path="/mi-cuenta"
           element={
-            clienteId && clienteEmail ? (
-              <MiCuenta />
-            ) : (
-              <Navigate to="/login" />
-            )
+            clienteId && clienteEmail ? <MiCuenta /> : <Navigate to="/login" />
           }
         />
         <Route
           path="/"
           element={
             clienteId && clienteEmail ? (
-              <Navigate to="/ver-menu" />
+              <Navigate to="/mi-cuenta" />
             ) : (
               <SoloMenu />
             )
@@ -153,7 +148,7 @@ function App() {
         <Route
           path="/login"
           element={
-            clienteId && clienteEmail ? <Navigate to="/ver-menu" /> : <Login />
+            clienteId && clienteEmail ? <Navigate to="/mi-cuenta" /> : <Login />
           }
         />
       </Routes>

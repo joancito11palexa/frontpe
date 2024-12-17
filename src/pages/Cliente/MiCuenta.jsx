@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import TupperIcon from "../../assets/iconsCuentaPage/iconTupper.svg?react"
+import MenuIcon from "../../assets/iconsCuentaPage/iconMenu.svg?react"
+import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react"
 export const MiCuenta = () => {
   const [userData, setUserData] = useState(null); // Estado para almacenar datos del usuario
   const idUser = localStorage.getItem("clienteId");
@@ -32,11 +34,7 @@ export const MiCuenta = () => {
           <div className="perfilData">
             {userData ? (
               <div>
-                <h3 className="name">Bienvenido, {userData.nombre}</h3>
-                <p className="email">Email: {userData.email}</p>
-                <p className="telefono">
-                  Teléfono: {userData.telefono || "No proporcionado"}
-                </p>
+                <h3 className="name">Bienvenido <span>{userData.nombre}</span> </h3>
               </div>
             ) : (
               <p className="loader">Cargando datos del usuario...</p>
@@ -45,16 +43,25 @@ export const MiCuenta = () => {
         </div>
         <div className="contenedorBox">
           <div className="col-4">
-            <div className="box">Ver mis pedidos</div>
+            <div className="box">
+              <TupperIcon/>
+            </div>
+            <p>Pedidos</p>
           </div>
           <div className="col-4">
-            <div className="box">Ver el menú</div>
+          <div className="box">
+              <MenuIcon/>
+            </div>
+            <p>Menú</p>
           </div>
           <div className="col-4">
-            <div className="box">Historial</div>
+          <div className="box">
+              <HistorialIcon/>
+            </div>
+            <p>Historial</p>
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-12 contenedorBtnCloseSession">
           <button onClick={() => {
             localStorage.removeItem("clienteId")
             localStorage.removeItem("clienteEmail")

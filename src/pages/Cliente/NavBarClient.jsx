@@ -14,6 +14,9 @@ export const NavBarClient = () => {
 
   return (
     <div className="navBarClient">
+      <a href="" className="logoLink">
+        comeliando
+      </a>
       <button
         className="btn botonParaAbrir"
         type="button"
@@ -45,7 +48,7 @@ export const NavBarClient = () => {
         </div>
         <div className="offcanvas-body">
           <ul>
-          <li>
+            <li>
               <Link
                 to="/ver-menu"
                 className="btn btn-link"
