@@ -15,19 +15,15 @@ export const SoloMenu = () => {
   const [fechaHoy, setFechaHoy] = useState("");
 
   useEffect(() => {
-    // Obtener fecha actual en formato "Lunes 12 de noviembre"
     console.log("sup")
     const obtenerFechaHoy = () => {
       const fecha = new Date();
       setFechaHoy(format(fecha, "EEEE dd 'de' MMMM", { locale: es }));
     };
-
     obtenerFechaHoy();
-
-    // Conexión al servidor para sincronizar los platos
     socketService.connect();
     socketService.sincronizarPlatos(dispatch);
-
+    console.log("spjidfn")
     return () => {
       socketService.limpiarPlatos();
       socketService.disconnect();
