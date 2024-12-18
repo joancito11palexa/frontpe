@@ -31,7 +31,7 @@ export const SoloMenu = () => {
   }, [dispatch]);
 
   return (
-    <div className="clientePage">
+    <div className="clienteMenuPage">
       <button
         className="cuentaBtn"
         onClick={() => (window.location.href = "/login")}
