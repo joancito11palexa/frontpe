@@ -48,7 +48,6 @@ export const Menu = () => {
           </div>
         ) : (
           <div>
-            {/* Entradas */}
             <h4>Entradas</h4>
             <div className="platos-section">
               {platos
@@ -56,11 +55,14 @@ export const Menu = () => {
                 .map((plato) => (
                   <div key={plato.id} className="plato-item">
                     <div className="row justify-content-center align-items-center g-2">
-                      <div className="col-8">
+                      <div className="col-7">
                         <p>{plato.nombre}</p>
                       </div>
-                      <div className="col-4">
+                      <div className="col-3">
                         <p>S/{plato.precio}</p>
+                      </div>
+                      <div className="col-2">
+                        <button>+</button>
                       </div>
                     </div>
                   </div>
@@ -74,11 +76,14 @@ export const Menu = () => {
                 .map((plato) => (
                   <div key={plato.id} className="plato-item">
                     <div className="row justify-content-center align-items-center g-2">
-                      <div className="col-8">
+                    <div className="col-7">
                         <p>{plato.nombre}</p>
                       </div>
-                      <div className="col-4">
+                      <div className="col-3">
                         <p>S/{plato.precio}</p>
+                      </div>
+                      <div className="col-2">
+                        <button>+</button>
                       </div>
                     </div>
                   </div>

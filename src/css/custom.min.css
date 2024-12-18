@@ -12575,6 +12575,9 @@ textarea.form-control-lg {
   text-align: center;
   text-transform: capitalize;
 }
+.clienteMenuPage .platos-list {
+  padding: 15px;
+}
 .clienteMenuPage .platos-list .loader {
   padding: 30px;
   text-align: center;
@@ -12598,17 +12601,7 @@ textarea.form-control-lg {
   fill: #1a3309;
 }
 .clienteMenuPage .platos-list h4, .clienteMenuPage .platos-list .h4 {
-  width: 180px;
-  display: inline-flex;
-  padding-left: 80px;
-  padding-right: 20px;
-  border-bottom: 1px solid black;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50px;
-}
-.clienteMenuPage .platos-list .platos-section {
-  padding-left: 70px;
+  margin-top: 30px;
 }
 .clienteMenuPage .platos-list .platos-section p {
   margin-bottom: 3px;
