@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import TupperIcon from "../../assets/iconsCuentaPage/iconTupper.svg?react";
 import MenuIcon from "../../assets/iconsCuentaPage/iconMenu.svg?react";
 import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react";
-//import UserIcon1 from "../../assets/UserIcon1.svg?react";
+import UserIcon from "../../assets/userIcon1.svg?react";
 import { Link } from "react-router-dom";
 export const MiCuenta = () => {
   const [userData, setUserData] = useState(null); // Estado para almacenar datos del usuario
@@ -67,7 +67,7 @@ export const MiCuenta = () => {
           </Link>
           <Link className="col-3">
             <div className="box">
-              <TupperIcon/>
+              <UserIcon />
             </div>
             <p>Mi cuenta</p>
           </Link>
@@ -79,7 +79,6 @@ export const MiCuenta = () => {
             <Link>Ver menú</Link>
           </div>
         </div>
-
       </div>
     </div>
   );
