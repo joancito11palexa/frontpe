@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import loading1 from "../../assets/gifs/loading1.gif";
 import MenuIcon1 from "../../assets/menuIcon1.svg?react";
-import UserIcon1 from '../../assets/userIcon1.svg?react'
+import UserIcon1 from "../../assets/userIcon1.svg?react";
 
 export const SoloMenu = () => {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ export const SoloMenu = () => {
 
   useEffect(() => {
     // Obtener fecha actual en formato "Lunes 12 de noviembre"
+    console.log("sup")
     const obtenerFechaHoy = () => {
       const fecha = new Date();
       setFechaHoy(format(fecha, "EEEE dd 'de' MMMM", { locale: es }));
@@ -39,7 +40,7 @@ export const SoloMenu = () => {
         className="cuentaBtn"
         onClick={() => (window.location.href = "/login")}
       >
-        <UserIcon1/>
+        <UserIcon1 />
       </button>
       <div className="encabezado">
         <h3>Menú</h3>
@@ -52,7 +53,6 @@ export const SoloMenu = () => {
           <div className="loader">
             {mensaje !== null ? (
               <>
-
                 Aun no se registran platos en el menú de hoy
                 <MenuIcon1 />
               </>

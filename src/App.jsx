@@ -63,7 +63,6 @@ function App() {
 
   return (
     <div>
-      {/* Mostrar NavBar y Footer solo si no estás en la página de login ni en /ver-menu */}
       {location.pathname !== "/login" &&
         location.pathname !== "/" &&
         mostrarNavBar()}
