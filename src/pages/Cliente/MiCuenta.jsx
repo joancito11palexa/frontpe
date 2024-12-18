@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import TupperIcon from "../../assets/iconsCuentaPage/iconTupper.svg?react"
-import MenuIcon from "../../assets/iconsCuentaPage/iconMenu.svg?react"
-import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react"
+import TupperIcon from "../../assets/iconsCuentaPage/iconTupper.svg?react";
+import MenuIcon from "../../assets/iconsCuentaPage/iconMenu.svg?react";
+import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react";
+import UserIcon from "../../assets/UserIcon1.svg?react";
+import { Link } from "react-router-dom";
 export const MiCuenta = () => {
   const [userData, setUserData] = useState(null); // Estado para almacenar datos del usuario
   const idUser = localStorage.getItem("clienteId");
@@ -34,7 +36,9 @@ export const MiCuenta = () => {
           <div className="perfilData">
             {userData ? (
               <div>
-                <h3 className="name">Bienvenido <span>{userData.nombre}</span> </h3>
+                <h3 className="name">
+                  Bienvenido <span>{userData.nombre}</span>{" "}
+                </h3>
               </div>
             ) : (
               <p className="loader">Cargando datos del usuario...</p>
@@ -42,33 +46,40 @@ export const MiCuenta = () => {
           </div>
         </div>
         <div className="contenedorBox">
-          <div className="col-4">
+          <Link to={"/ver-menu"} className="col-3">
             <div className="box">
-              <TupperIcon/>
-            </div>
-            <p>Pedidos</p>
-          </div>
-          <div className="col-4">
-          <div className="box">
-              <MenuIcon/>
+              <MenuIcon />
             </div>
             <p>Menú</p>
-          </div>
-          <div className="col-4">
-          <div className="box">
-              <HistorialIcon/>
+          </Link>
+          <Link className="col-3">
+            <div className="box">
+              <TupperIcon />
+            </div>
+            <p>Pedidos</p>
+          </Link>
+
+          <Link className="col-3">
+            <div className="box">
+              <HistorialIcon />
             </div>
             <p>Historial</p>
+          </Link>
+          <Link className="col-3">
+            <div className="box">
+              <UserIcon />
+            </div>
+            <p>Mi cuenta</p>
+          </Link>
+        </div>
+        <div className="col-12 box-ad">
+          <div className="content">
+            <h4>¿Te da hambre?</h4>
+            <p>Mira lo que tenemos para ti.</p>
+            <Link>Ver menú</Link>
           </div>
         </div>
-        <div className="col-12 contenedorBtnCloseSession">
-          <button onClick={() => {
-            localStorage.removeItem("clienteId")
-            localStorage.removeItem("clienteEmail")
-          }}>
-            Cerrar sesión
-          </button>
-        </div>
+
       </div>
     </div>
   );

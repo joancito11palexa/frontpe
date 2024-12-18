@@ -12663,9 +12663,11 @@ textarea.form-control-lg {
 }
 
 .miCuentaPage {
-  height: 100vh;
   background-color: #f3f4ed;
   padding: 15px;
+}
+.miCuentaPage a {
+  text-decoration: none;
 }
 .miCuentaPage .perfilData {
   color: black;
@@ -12681,27 +12683,33 @@ textarea.form-control-lg {
 }
 .miCuentaPage .contenedorBox {
   display: flex;
-  gap: 16px;
   justify-content: center;
   align-items: center;
   padding: 15px;
+  gap: 8px;
 }
-.miCuentaPage .contenedorBox .col-4 {
-  flex: 1; /* Asegura que las columnas compartan el espacio disponible */
+.miCuentaPage .contenedorBox .col-3 {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 }
 .miCuentaPage .contenedorBox .box {
   display: flex;
   justify-content: center;
   align-items: center; /* Centra el contenido dentro de la caja */
   height: 100%; /* Se ajustará a la altura del contenedor */
-  padding: 16px;
-  border-radius: 20px;
+  border-radius: 50%;
   background-color: #963903;
   text-align: center;
   color: black;
+  position: relative;
+  height: 80px;
+  width: 80px;
 }
 .miCuentaPage .contenedorBox .box svg {
-  width: 100px;
+  padding: 0px;
+  width: 50%;
   fill: rgb(255, 255, 255);
 }
 .miCuentaPage .contenedorBox p {
@@ -12709,9 +12717,50 @@ textarea.form-control-lg {
   text-align: center;
   color: black;
 }
+.miCuentaPage .box-ad {
+  height: 300px;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.miCuentaPage .box-ad .content {
+  padding-left: 10px;
+  overflow: hidden;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.miCuentaPage .box-ad .content h4, .miCuentaPage .box-ad .content .h4 {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.miCuentaPage .box-ad .content p {
+  font-size: 1.2rem;
+}
+.miCuentaPage .box-ad .content a {
+  font-size: 1rem;
+  background-color: #1a3309;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
 .miCuentaPage .contenedorBtnCloseSession {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin-top: 50px;
-  background-color: red;
+}
+.miCuentaPage .contenedorBtnCloseSession button {
+  background-color: black;
+  color: white;
+  border: none;
 }
 
 * {

@@ -1,7 +1,9 @@
 .miCuentaPage {
-  height: 100vh;
   background-color: #f3f4ed;
   padding: 15px;
+  a{
+    text-decoration: none;
+  }
   .perfilData {
     color: black;
     margin-top: 70px;
@@ -16,25 +18,31 @@
   }
   .contenedorBox {
     display: flex;
-    gap: 16px;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    .col-4 {
-      flex: 1; /* Asegura que las columnas compartan el espacio disponible */
+    gap: 8px;
+    .col-3 {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
     }
     .box {
       display: flex;
       justify-content: center;
       align-items: center; /* Centra el contenido dentro de la caja */
       height: 100%; /* Se ajustará a la altura del contenedor */
-      padding: 16px;
-      border-radius: 20px;
+      border-radius: 50%;
       background-color: $otro-color;
       text-align: center;
       color: black;
+      position: relative;
+      height: 80px;
+      width: 80px;
       svg {
-        width: 100px;
+        padding: 0px;
+        width: 50%;
         fill: rgb(255, 255, 255);
       }
     }
@@ -44,8 +52,51 @@
       color: black;
     }
   }
+  .box-ad{
+    height: 300px;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    .content{
+      padding-left: 10px;
+      overflow: hidden;
+      height: 100%;
+      display: inline-flex;
+      justify-content: center;
+      flex-direction: column;
+      h4{
+        font-weight: bold;
+        font-size: 4rem;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+      a{
+
+        font-size: 1rem;
+        background-color: $tercer-color;
+        color: white;
+        padding: 5px 15px;
+        border-radius:20px;
+        max-width: fit-content; 
+      }
+    }
+
+  }
   .contenedorBtnCloseSession {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin-top: 50px;
-    background-color: red;
+
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+    }
   }
 }
