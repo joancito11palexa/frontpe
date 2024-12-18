@@ -15,7 +15,7 @@ export const NavBarClient = () => {
   return (
     <div className="navBarClient">
       <a href="" className="logoLink">
-        eitten.app
+        aitten
       </a>
       <button
         className="btn botonParaAbrir"
