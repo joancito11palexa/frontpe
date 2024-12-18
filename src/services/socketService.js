@@ -34,7 +34,6 @@ const socketService = {
   // Sincronización específica para platos
   sincronizarPlatos: (dispatch) => {
     socket.emit("solicitar-platos");
-
     socket.on("platos-actualizados", (data) => {
       dispatch(setPlatos(data));
     });

@@ -1,7 +1,10 @@
 .footerComponent{
-    background-color: transparent;
-    height: 150px;
+    margin-top: 50px;
+    background-color: $tercer-color;
+    color: rgb(255, 255, 255);
     display: flex;
+    padding: 20px;
     justify-content: center;
     align-items: center;
+    border-radius: 20px 20px 0 0;
 }

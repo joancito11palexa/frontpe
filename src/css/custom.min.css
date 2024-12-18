@@ -12485,11 +12485,14 @@ textarea.form-control-lg {
 }
 
 .footerComponent {
-  background-color: transparent;
-  height: 150px;
+  margin-top: 50px;
+  background-color: #1a3309;
+  color: rgb(255, 255, 255);
   display: flex;
+  padding: 20px;
   justify-content: center;
   align-items: center;
+  border-radius: 20px 20px 0 0;
 }
 
 .ventasPage {
@@ -12539,17 +12542,13 @@ textarea.form-control-lg {
   color: white;
 }
 
-.clientePage {
+.clienteMenuPage {
   background-color: #f3f4ed;
   border-radius: 0;
   color: #112206;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  padding-top: 50px;
 }
-.clientePage .cuentaBtn {
+.clienteMenuPage .cuentaBtn {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -12557,26 +12556,26 @@ textarea.form-control-lg {
   border: none;
   background-color: transparent;
 }
-.clientePage .cuentaBtn svg {
+.clienteMenuPage .cuentaBtn svg {
   width: 30px;
   height: 30px;
   fill: #1a3309;
 }
-.clientePage .iconFood1 {
+.clienteMenuPage .iconFood1 {
   width: 50px;
   height: 50px;
   display: none;
 }
-.clientePage .encabezado h3, .clientePage .encabezado .h3 {
+.clienteMenuPage .encabezado h3, .clienteMenuPage .encabezado .h3 {
   text-align: center;
   font-size: 3rem;
 }
-.clientePage .encabezado .fecha {
+.clienteMenuPage .encabezado .fecha {
   margin-top: 15px;
   text-align: center;
   text-transform: capitalize;
 }
-.clientePage .platos-list .loader {
+.clienteMenuPage .platos-list .loader {
   padding: 30px;
   text-align: center;
   display: flex;
@@ -12585,20 +12584,20 @@ textarea.form-control-lg {
   flex-direction: column;
   margin-top: 15px;
 }
-.clientePage .platos-list .loader img {
+.clienteMenuPage .platos-list .loader img {
   width: 120px;
   height: 120px;
 }
-.clientePage .platos-list .loader p {
+.clienteMenuPage .platos-list .loader p {
   margin-top: 10px;
 }
-.clientePage .platos-list .loader svg {
+.clienteMenuPage .platos-list .loader svg {
   margin-top: 30px;
   width: 120px;
   height: 120px;
   fill: #1a3309;
 }
-.clientePage .platos-list h4, .clientePage .platos-list .h4 {
+.clienteMenuPage .platos-list h4, .clienteMenuPage .platos-list .h4 {
   width: 180px;
   display: inline-flex;
   padding-left: 80px;
@@ -12608,10 +12607,10 @@ textarea.form-control-lg {
   text-align: center;
   margin-top: 50px;
 }
-.clientePage .platos-list .platos-section {
+.clienteMenuPage .platos-list .platos-section {
   padding-left: 70px;
 }
-.clientePage .platos-list .platos-section p {
+.clienteMenuPage .platos-list .platos-section p {
   margin-bottom: 3px;
 }
 
@@ -12684,7 +12683,7 @@ textarea.form-control-lg {
 .miCuentaPage .contenedorBox {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 15px;
   gap: 8px;
 }
@@ -12717,13 +12716,23 @@ textarea.form-control-lg {
   text-align: center;
   color: black;
 }
+.miCuentaPage .carousel-control-prev, .miCuentaPage .carousel-control-next {
+  padding-top: 20px;
+  align-items: start;
+  opacity: 1;
+}
+.miCuentaPage .carousel-control-prev span svg, .miCuentaPage .carousel-control-next span svg {
+  width: 0px;
+  height: 0px;
+  fill: white;
+}
 .miCuentaPage .box-ad {
-  height: 300px;
-  background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+  border: 1px solid black;
+  height: 500px;
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 35px;
+  overflow-wrap: anywhere;
 }
 .miCuentaPage .box-ad .content {
   padding-left: 10px;
@@ -12751,6 +12760,16 @@ textarea.form-control-lg {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
+.miCuentaPage .menu {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+}
+.miCuentaPage .pedidos, .miCuentaPage .registro, .miCuentaPage .cuenta {
+  color: rgb(255, 255, 255);
+  background-color: #1a3309;
+}
+.miCuentaPage .pedidos a, .miCuentaPage .registro a, .miCuentaPage .cuenta a {
+  background-color: #963903 !important;
+}
 .miCuentaPage .contenedorBtnCloseSession {
   display: flex;
   justify-content: center;
@@ -12776,7 +12795,7 @@ button {
 }
 
 body {
-  background-color: #262A2C;
+  background-color: #f3f4ed;
   color: white;
 }
 

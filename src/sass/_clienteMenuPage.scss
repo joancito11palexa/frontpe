@@ -1,12 +1,8 @@
-.clientePage {
+.clienteMenuPage {
   background-color: #f3f4ed;
   border-radius: 0;
   color: #112206;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  padding-top: 50px;
   .cuentaBtn{
     position: absolute;
     top:10px;

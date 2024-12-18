@@ -32,7 +32,7 @@ export const Menu = () => {
   }, [dispatch]);
 
   return (
-    <div className="clientePage">
+    <div className="clienteMenuPage">
 
       <div className="encabezado">
         <h3>Menú</h3>

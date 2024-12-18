@@ -6,7 +6,7 @@
 @import "./navBarComponent";
 @import "./footer";
 @import "./ventas";
-@import "./cliente";
+@import "./clienteMenuPage";
 @import "./navBarClient";
 @import "./cuentaClientePage";
 @import "./variables";
@@ -31,8 +31,9 @@ button {
   border-radius: 10px;
 }
 
+
 body {
-  background-color: $background-color;
+  background-color: $background-color2;
   color: $text-color;
 }
 

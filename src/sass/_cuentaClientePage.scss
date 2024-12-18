@@ -19,7 +19,7 @@
   .contenedorBox {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 15px;
     gap: 8px;
     .col-3 {
@@ -52,13 +52,26 @@
       color: black;
     }
   }
+  .carousel-control-prev, .carousel-control-next{
+    padding-top: 20px;
+    align-items: start;
+    opacity: 1;
+    span{
+      svg{
+        width: 0px;
+        height: 0px;
+        fill: white;
+
+      }
+    }
+  }
   .box-ad{
-    height: 300px;
-    background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+    border: 1px solid black;
+    height: 500px;
     background-size: cover;
     background-position: center;
-    border-radius: 20px;
-    overflow: hidden;
+    border-radius: 35px;
+    overflow-wrap: anywhere;
     .content{
       padding-left: 10px;
       overflow: hidden;
@@ -87,6 +100,18 @@
     }
 
   }
+  .menu{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+  }
+  .pedidos, .registro, .cuenta{
+    color: rgb(255, 255, 255);
+    background-color: $tercer-color;
+    a{
+      background-color: $otro-color !important;
+    }
+  }
+
+ 
   .contenedorBtnCloseSession {
     display: flex;
     justify-content: center;
