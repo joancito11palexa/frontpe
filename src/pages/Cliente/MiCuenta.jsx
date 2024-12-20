@@ -4,13 +4,14 @@ import TupperIcon from "../../assets/iconsCuentaPage/iconTupper.svg?react";
 import MenuIcon from "../../assets/iconsCuentaPage/iconMenu.svg?react";
 import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react";
 import UserIcon from "../../assets/iconsCuentaPage/userIcon2.svg?react";
-import PrevIcon from "../../assets/iconsCuentaPage/prevIcon.svg?react";
-import NextIcon from "../../assets/iconsCuentaPage/nextIcon.svg?react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react"; // Importa useAuth0
 
 export const MiCuenta = () => {
-  const [userData, setUserData] = useState(null); 
+  const [userData, setUserData] = useState(null);
   const idUser = localStorage.getItem("clienteId");
+  const { logout } = useAuth0(); // Desestructura logout de useAuth0
 
   useEffect(() => {
     const getUser = async () => {
@@ -23,7 +24,7 @@ export const MiCuenta = () => {
         const response = await axios.get(
           `https://socketserver-u5si.onrender.com/api/clientes/${idUser}`
         );
-        setUserData(response.data); 
+        setUserData(response.data);
       } catch (error) {
         console.error("Error al obtener los datos del usuario:", error);
       }
@@ -32,100 +33,115 @@ export const MiCuenta = () => {
     getUser();
   }, [idUser]);
 
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    logout({ returnTo: window.location.origin }); // Cerrar sesión en Auth0
+    localStorage.clear(); // Limpiar localStorage si es necesario
+  };
+
   return (
     <div className="miCuentaPage">
       <div className="row justify-content-center align-items-center g-2">
-        <div className="col-12">
-          <div className="perfilData">
-            {userData ? (
-              <div>
-                <h3 className="name">
-                  Bienvenido <span>{userData.nombre}</span>{" "}
-                </h3>
+        <div className="col-12 col-md-6">
+          <div className="col-12">
+            <div className="perfilData">
+              {userData ? (
+                <div>
+                  <h3 className="name">
+                    Bienvenido <span>{userData.nombre}</span>{" "}
+                  </h3>
+                </div>
+              ) : (
+                <p className="loader">Cargando datos del usuario...</p>
+              )}
+            </div>
+          </div>
+          <div className="contenedorBox">
+            <Link to={"/ver-menu"} className="col-3">
+              <div className="box">
+                <MenuIcon />
               </div>
-            ) : (
-              <p className="loader">Cargando datos del usuario...</p>
-            )}
+              <p>Menú</p>
+            </Link>
+            <Link className="col-3">
+              <div className="box">
+                <TupperIcon />
+              </div>
+              <p>Pedidos</p>
+            </Link>
+
+            <Link className="col-3">
+              <div className="box">
+                <HistorialIcon />
+              </div>
+              <p>Historial</p>
+            </Link>
+            <Link className="col-3">
+              <div className="box">
+                <UserIcon />
+              </div>
+              <p>Mi cuenta</p>
+            </Link>
           </div>
         </div>
-        <div className="contenedorBox">
-          <Link to={"/ver-menu"} className="col-3">
-            <div className="box">
-              <MenuIcon />
-            </div>
-            <p>Menú</p>
-          </Link>
-          <Link className="col-3">
-            <div className="box">
-              <TupperIcon />
-            </div>
-            <p>Pedidos</p>
-          </Link>
-
-          <Link className="col-3">
-            <div className="box">
-              <HistorialIcon />
-            </div>
-            <p>Historial</p>
-          </Link>
-          <Link className="col-3">
-            <div className="box">
-              <UserIcon />
-            </div>
-            <p>Mi cuenta</p>
-          </Link>
+        <div className="col-12 col-md-6">
+          <div className="carouselContainer">
+            <Carousel indicators={true} pause={false} aria-controls="false">
+              <Carousel.Item>
+                <div className="col-12 box-ad menu">
+                  <div className="content">
+                    <h4>¿Te da hambre?</h4>
+                    <p>Mira lo que tenemos para ti.</p>
+                    <Link to={"/ver-menu"}>Ver menú</Link>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="col-12 box-ad pedidos">
+                  <div className="content">
+                    <h4>Gestión de pedidos</h4>
+                    <p>
+                      Consulta el estado de tus pedidos actuales y asegúrate de
+                      que todo esté en orden.
+                    </p>
+                    <Link to={"/ver-menu"}>Ver pedidos</Link>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="col-12 box-ad registro">
+                  <div className="content">
+                    <h4>Registro de órdenes anteriores</h4>
+                    <p>
+                      Accede a un historial detallado de tus pedidos realizados,
+                      incluyendo fechas y montos totales.
+                    </p>
+                    <Link to={"/ver-menu"}>Ver registro</Link>
+                  </div>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="col-12 box-ad cuenta">
+                  <div className="content">
+                    <h4>Configuración de tu cuenta</h4>
+                    <p>
+                      Administra tu información personal y preferencias de
+                      usuario para mejorar tu experiencia.
+                    </p>
+                    <Link to={"/ver-menu"}>Ver mi cuenta</Link>
+                  </div>
+                </div>
+              </Carousel.Item>
+            </Carousel>
+          </div>
         </div>
-        <Carousel
-          indicators={false}
-          prevIcon={<PrevIcon />}
-          nextIcon={<NextIcon />}
-        >
-          <Carousel.Item>
-            <div className="col-12 box-ad menu">
-              <div className="content">
-                <h4>¿Te da hambre?</h4>
-                <p>Mira lo que tenemos para ti.</p>
-                <Link to={"/ver-menu"}>Ver menú</Link>
-              </div>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="col-12 box-ad pedidos">
-              <div className="content">
-                <h4>Gestión de pedidos</h4>
-                <p>
-                  Consulta el estado de tus pedidos actuales y asegúrate de que
-                  todo esté en orden.
-                </p>
-                <Link to={"/ver-menu"}>Ver pedidos</Link>
-              </div>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="col-12 box-ad registro">
-              <div className="content">
-                <h4>Registro de órdenes anteriores</h4>
-                <p>
-                  Accede a un historial detallado de tus pedidos realizados,
-                  incluyendo fechas y montos totales.
-                </p>
-                <Link to={"/ver-menu"}>Ver registro</Link>
-              </div>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="col-12 box-ad cuenta">
-              <div className="content">
-                <h4>Configuración de tu cuenta</h4>
-                <p>
-                  Administra tu información personal y preferencias de usuario
-                  para mejorar tu experiencia.
-                </p>
-                <Link to={"/ver-menu"}>Ver mi cuenta</Link>
-              </div>
-            </div>
-          </Carousel.Item>
-        </Carousel>
+      </div>
+
+      {/* Botón para cerrar sesión */}
+      <div className="text-center mt-4">
+        <button className="btn btn-danger" onClick={handleLogout}>
+          Cerrar sesión
+        </button>
       </div>
     </div>
   );

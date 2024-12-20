@@ -15,7 +15,7 @@ import { Calculos } from "./pages/Calculos/Calculos";
 import { Ventas } from "./pages/Ventas/Ventas";
 import { Login } from "./pages/Cliente/Login";
 import { Menu } from "./pages/Menu/Menu";
-import { SoloMenu } from "./pages/Cliente/SoloMenu";
+import { SoloMenu } from "./pages/Menu/SoloMenu";
 import { NavBarClient } from "./pages/Cliente/NavBarClient";
 import { NotFound } from "./pages/NotFound";
 import { MiCuenta } from "./pages/Cliente/MiCuenta";

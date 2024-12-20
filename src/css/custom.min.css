@@ -12485,14 +12485,13 @@ textarea.form-control-lg {
 }
 
 .footerComponent {
-  margin-top: 50px;
-  background-color: #1a3309;
+  background-color: #963903;
   color: rgb(255, 255, 255);
   display: flex;
   padding: 20px;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  border-radius: 20px 20px 0 0;
 }
 
 .ventasPage {
@@ -12569,6 +12568,8 @@ textarea.form-control-lg {
 .clienteMenuPage .encabezado h3, .clienteMenuPage .encabezado .h3 {
   text-align: center;
   font-size: 3rem;
+  font-weight: bold;
+  font-family: "League Spartan", sans-serif;
 }
 .clienteMenuPage .encabezado .fecha {
   margin-top: 15px;
@@ -12656,7 +12657,7 @@ textarea.form-control-lg {
 
 .miCuentaPage {
   background-color: #f3f4ed;
-  padding: 15px;
+  overflow: hidden;
 }
 .miCuentaPage a {
   text-decoration: none;
@@ -12664,7 +12665,8 @@ textarea.form-control-lg {
 .miCuentaPage .perfilData {
   color: black;
   margin-top: 70px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  padding-left: 15px;
 }
 .miCuentaPage .perfilData h3, .miCuentaPage .perfilData .h3 {
   font-size: 2rem;
@@ -12677,7 +12679,8 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: start;
-  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   gap: 8px;
 }
 .miCuentaPage .contenedorBox .col-3 {
@@ -12701,67 +12704,109 @@ textarea.form-control-lg {
 }
 .miCuentaPage .contenedorBox .box svg {
   padding: 0px;
-  width: 50%;
-  fill: rgb(255, 255, 255);
+  width: 45%;
+  height: 45%;
+  fill: #f3f4ed;
 }
 .miCuentaPage .contenedorBox p {
   margin-top: 10px;
   text-align: center;
   color: black;
 }
-.miCuentaPage .carousel-control-prev, .miCuentaPage .carousel-control-next {
+.miCuentaPage .carouselContainer {
+  background-color: #1a3309;
+  padding: 15px;
+  padding-top: 50px;
+  border-radius: 30px 30px 0 0;
+}
+@media screen and (min-width: 768px) {
+  .miCuentaPage .carouselContainer {
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+.miCuentaPage .carouselContainer .carousel-inner {
+  border-radius: 30px;
+}
+.miCuentaPage .carouselContainer .carousel-control-prev,
+.miCuentaPage .carouselContainer .carousel-control-next {
   padding-top: 20px;
   align-items: start;
-  opacity: 1;
+  z-index: 3;
+  opacity: 0;
 }
-.miCuentaPage .carousel-control-prev span svg, .miCuentaPage .carousel-control-next span svg {
+.miCuentaPage .carouselContainer .carousel-control-prev span svg,
+.miCuentaPage .carouselContainer .carousel-control-next span svg {
   width: 0px;
   height: 0px;
   fill: white;
 }
-.miCuentaPage .box-ad {
-  border: 1px solid black;
+.miCuentaPage .carouselContainer .box-ad {
   height: 500px;
   background-size: cover;
   background-position: center;
-  border-radius: 35px;
+  border-radius: 30px;
+  overflow: hidden;
   overflow-wrap: anywhere;
 }
-.miCuentaPage .box-ad .content {
-  padding-left: 10px;
+.miCuentaPage .carouselContainer .box-ad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.479);
+  z-index: 1;
+}
+.miCuentaPage .carouselContainer .box-ad .content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
   overflow: hidden;
   height: 100%;
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
 }
-.miCuentaPage .box-ad .content h4, .miCuentaPage .box-ad .content .h4 {
+.miCuentaPage .carouselContainer .box-ad .content h4, .miCuentaPage .carouselContainer .box-ad .content .h4 {
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 0.9;
   text-transform: uppercase;
 }
-.miCuentaPage .box-ad .content p {
-  font-size: 1.2rem;
+@media screen and (max-width: 768px) {
+  .miCuentaPage .carouselContainer .box-ad .content h4, .miCuentaPage .carouselContainer .box-ad .content .h4 {
+    font-size: 2.2rem;
+  }
 }
-.miCuentaPage .box-ad .content a {
+.miCuentaPage .carouselContainer .box-ad .content p {
   font-size: 1rem;
-  background-color: #1a3309;
+}
+.miCuentaPage .carouselContainer .box-ad .content a {
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
   color: white;
   padding: 5px 15px;
-  border-radius: 20px;
+  border-radius: 0px 20px 20px 0;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
-.miCuentaPage .menu {
+.miCuentaPage .carouselContainer .menu {
   background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
 }
-.miCuentaPage .pedidos, .miCuentaPage .registro, .miCuentaPage .cuenta {
+.miCuentaPage .carouselContainer .pedidos {
+  background-image: url("https://www.seed-house.com/wp-content/uploads/2020/07/SHE160_FoodIllustration_Hero.jpg");
+}
+.miCuentaPage .carouselContainer .registro {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5ad536a436099b315444c687/1699549611668-F1ILGCDG9AUA01XD2Z5J/food+illustration+of+vegan+thanksgiving+food+by+salli+swindell.JPG?format=2500w");
+}
+.miCuentaPage .carouselContainer .pedidos,
+.miCuentaPage .carouselContainer .registro,
+.miCuentaPage .carouselContainer .cuenta {
   color: rgb(255, 255, 255);
   background-color: #1a3309;
-}
-.miCuentaPage .pedidos a, .miCuentaPage .registro a, .miCuentaPage .cuenta a {
-  background-color: #963903 !important;
 }
 .miCuentaPage .contenedorBtnCloseSession {
   display: flex;

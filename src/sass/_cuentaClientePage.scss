@@ -1,13 +1,14 @@
 .miCuentaPage {
   background-color: #f3f4ed;
-  padding: 15px;
-  a{
+  overflow: hidden;
+  a {
     text-decoration: none;
   }
   .perfilData {
     color: black;
     margin-top: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    padding-left: 15px;
     h3 {
       font-size: 2rem;
       font-weight: 600;
@@ -20,7 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     gap: 8px;
     .col-3 {
       justify-content: center;
@@ -42,8 +44,9 @@
       width: 80px;
       svg {
         padding: 0px;
-        width: 50%;
-        fill: rgb(255, 255, 255);
+        width: 45%;
+        height: 45%;
+        fill: $background-color2;
       }
     }
     p {
@@ -52,66 +55,101 @@
       color: black;
     }
   }
-  .carousel-control-prev, .carousel-control-next{
-    padding-top: 20px;
-    align-items: start;
-    opacity: 1;
-    span{
-      svg{
-        width: 0px;
-        height: 0px;
-        fill: white;
-
-      }
-    }
-  }
-  .box-ad{
-    border: 1px solid black;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 35px;
-    overflow-wrap: anywhere;
-    .content{
-      padding-left: 10px;
-      overflow: hidden;
-      height: 100%;
-      display: inline-flex;
-      justify-content: center;
-      flex-direction: column;
-      h4{
-        font-weight: bold;
-        font-size: 4rem;
-        line-height: 0.9;
-        text-transform: uppercase;
-      }
-      p{
-        font-size: 1.2rem;
-      }
-      a{
-
-        font-size: 1rem;
-        background-color: $tercer-color;
-        color: white;
-        padding: 5px 15px;
-        border-radius:20px;
-        max-width: fit-content; 
-      }
-    }
-
-  }
-  .menu{
-    background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
-  }
-  .pedidos, .registro, .cuenta{
-    color: rgb(255, 255, 255);
+  .carouselContainer {
     background-color: $tercer-color;
-    a{
-      background-color: $otro-color !important;
+    padding: 15px;
+    padding-top: 50px;
+    border-radius: 30px 30px 0 0;
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+      border-radius: 0;
+
+    }
+    .carousel-inner{
+      border-radius: 30px;
+
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      padding-top: 20px;
+      align-items: start;
+      z-index: 3;
+      opacity: 0;
+      span {
+        svg {
+          width: 0px;
+          height: 0px;
+          fill: white;
+        }
+      }
+    }
+    .box-ad {
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 30px;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.479); // Cambia el último valor (0.5) para ajustar la opacidad
+        z-index: 1; // Poner detrás del contenido
+      }
+      .content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        overflow: hidden;
+        height: 100%;
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        h4 {
+          font-weight: bold;
+          font-size: 3.2rem;
+          line-height: 0.9;
+          text-transform: uppercase;
+          @media screen and (max-width: 768px) {
+            font-size: 2.2rem;
+          }
+        }
+        p {
+          font-size: 1rem;
+        }
+        a {
+          font-size: 1rem;
+          background-color: transparent ;
+          border: 1px solid white;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 0px 20px 20px 0;
+          max-width: fit-content;
+        }
+      }
+    }
+    .menu {
+      background-image: url("https://images.squarespace-cdn.com/content/v1/56096f25e4b0cdaca43f3394/1566425249102-M9DZ17NJ72DPISDABIWF/5c%28GASTRONOMIA%29.jpg?format=1500w");
+    }
+    .pedidos {
+      background-image: url("https://www.seed-house.com/wp-content/uploads/2020/07/SHE160_FoodIllustration_Hero.jpg");
+    }
+    .registro {
+      background-image: url("https://images.squarespace-cdn.com/content/v1/5ad536a436099b315444c687/1699549611668-F1ILGCDG9AUA01XD2Z5J/food+illustration+of+vegan+thanksgiving+food+by+salli+swindell.JPG?format=2500w");
+    }
+    .pedidos,
+    .registro,
+    .cuenta {
+      color: rgb(255, 255, 255);
+      background-color: $tercer-color;
+  
     }
   }
 
- 
   .contenedorBtnCloseSession {
     display: flex;
     justify-content: center;
