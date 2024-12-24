@@ -6,12 +6,12 @@ import HistorialIcon from "../../assets/iconsCuentaPage/historialIcon.svg?react"
 import UserIcon from "../../assets/iconsCuentaPage/userIcon2.svg?react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useAuth0 } from "@auth0/auth0-react"; // Importa useAuth0
+
 
 export const MiCuenta = () => {
   const [userData, setUserData] = useState(null);
   const idUser = localStorage.getItem("clienteId");
-  const { logout } = useAuth0(); // Desestructura logout de useAuth0
+  
 
   useEffect(() => {
     const getUser = async () => {
@@ -33,11 +33,6 @@ export const MiCuenta = () => {
     getUser();
   }, [idUser]);
 
-  // Función para cerrar sesión
-  const handleLogout = () => {
-    logout({ returnTo: window.location.origin }); // Cerrar sesión en Auth0
-    localStorage.clear(); // Limpiar localStorage si es necesario
-  };
 
   return (
     <div className="miCuentaPage">
@@ -63,20 +58,20 @@ export const MiCuenta = () => {
               </div>
               <p>Menú</p>
             </Link>
-            <Link className="col-3">
+            <Link className="col-3" to={"/cliente-pedidos"}>
               <div className="box">
                 <TupperIcon />
               </div>
               <p>Pedidos</p>
             </Link>
 
-            <Link className="col-3">
-              <div className="box">
+            <Link className="col-3" to={"/historialPedidos"}>
+              <div className="box" >
                 <HistorialIcon />
               </div>
               <p>Historial</p>
             </Link>
-            <Link className="col-3">
+            <Link className="col-3" to={"/cuenta-cliente"}>
               <div className="box">
                 <UserIcon />
               </div>
@@ -137,12 +132,7 @@ export const MiCuenta = () => {
         </div>
       </div>
 
-      {/* Botón para cerrar sesión */}
-      <div className="text-center mt-4">
-        <button className="btn btn-danger" onClick={handleLogout}>
-          Cerrar sesión
-        </button>
-      </div>
+
     </div>
   );
 };

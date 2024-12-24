@@ -15,7 +15,7 @@ export const SoloMenu = () => {
   const [fechaHoy, setFechaHoy] = useState("");
 
   useEffect(() => {
-    console.log("sup")
+
     const obtenerFechaHoy = () => {
       const fecha = new Date();
       setFechaHoy(format(fecha, "EEEE dd 'de' MMMM", { locale: es }));
@@ -23,7 +23,7 @@ export const SoloMenu = () => {
     obtenerFechaHoy();
     socketService.connect();
     socketService.sincronizarPlatos(dispatch);
-    console.log("spjidfn")
+
     return () => {
       socketService.limpiarPlatos();
       socketService.disconnect();

@@ -1,55 +1,68 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 export const Login = () => {
-  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  const {
+    loginWithRedirect,
+    logout,
+    isAuthenticated,
+    user,
+    getAccessTokenSilently,
+  } = useAuth0();
   const navigate = useNavigate();
 
   // Guardar datos del usuario autenticado con Auth0
   useEffect(() => {
-    if (isAuthenticated && user) {
-      console.log("User:", user); // Log del usuario
-      // Verificar que los datos del usuario estén presentes antes de almacenarlos
-      if (user?.sub && user?.email) {
-        localStorage.setItem("clienteId", user.sub);
-        localStorage.setItem("clienteEmail", user.email);
-        localStorage.setItem("isA", user.isAdmin ? "true" : "false");
-        // Verifica que los datos se guardaron correctamente
-        console.log("Datos guardados en localStorage:", {
-          clienteId: localStorage.getItem("clienteId"),
-          clienteEmail: localStorage.getItem("clienteEmail"),
-          isAdmin: localStorage.getItem("isA"),
-        });
-        // Redirigir a la página deseada después de guardar los datos
-        navigate("/mi-cuenta");
-      } else {
-        console.error("Error: los datos del usuario no están completos.");
+    const sincronizarConServidor = async () => {
+      if (isAuthenticated && user) {
+        console.log("Usuario autenticado:", user);
+        try {
+          const token = await getAccessTokenSilently();
+          const response = await axios.post(
+            "http://localhost:4000/api/clientes/auth0",
+            {
+              auth0Id: user.sub,
+              email: user.email,
+              name: user.name,
+              isA: user.esAdministrador,
+              nickname: user.nickname,
+              picture: user.picture,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`, // Incluir el token de autorización
+              },
+            }
+          );
+
+          console.log("Respuesta del servidor:", response.data);
+          localStorage.setItem("clienteId", response.data.id);
+          localStorage.setItem("clienteName", response.data.nombre);
+          localStorage.setItem("clienteEmail", response.data.email);
+          localStorage.setItem("picture", response.data.picture);
+          localStorage.setItem(
+            "isAdmin",
+            response.data.esAdministrador ? "true" : "false"
+          );
+
+          // Redirigir al usuario
+          navigate("/mi-cuenta");
+        } catch (error) {
+          console.error("Error al sincronizar con el servidor:", error);
+        }
       }
-    }
-  }, [isAuthenticated, user, navigate]);
+    };
+
+    sincronizarConServidor();
+  }, [isAuthenticated, user, navigate, getAccessTokenSilently]);
 
   const handleAuth0Login = async () => {
     if (!isAuthenticated) {
       console.log("Usuario no autenticado, redirigiendo...");
       loginWithRedirect();
-      return;
     }
-    if (user) {
-      localStorage.setItem("clienteId", user?.sub);
-      localStorage.setItem("clienteEmail", user?.email);
-      localStorage.setItem("isA", user?.isAdmin);
-
-      // Verificamos que los datos se guardaron correctamente
-      console.log("Datos guardados en localStorage:", {
-        clienteId: localStorage.getItem("clienteId"),
-        clienteEmail: localStorage.getItem("clienteEmail"),
-        isAdmin: localStorage.getItem("isA"),
-      });
-    }
-
-    // Redirigir a la página deseada
-    navigate("/mi-cuenta");
   };
 
   const handleAuth0Logout = () => {

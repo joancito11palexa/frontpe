@@ -21,6 +21,8 @@ import { NotFound } from "./pages/NotFound";
 import { MiCuenta } from "./pages/Cliente/MiCuenta";
 import { MisPedidos } from "./pages/Cliente/MisPedidos";
 import { LoaderPage } from "./pages/LoaderPage/LoaderPage";
+import { ClienteCuenta } from "./pages/Cliente/ClienteCuenta";
+import { Historial } from "./pages/Cliente/Historial";
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
   const clienteId = localStorage.getItem("clienteId");
@@ -37,7 +39,7 @@ const ProtectedRoute = ({ children }) => {
 const ProtectedRouteAdmin = ({ children }) => {
   const clienteId = localStorage.getItem("clienteId");
   const clienteEmail = localStorage.getItem("clienteEmail");
-  const isAdmin = localStorage.getItem("isA");
+  const isAdmin = localStorage.getItem("isAdmin");
 
   if (!clienteId || !clienteEmail || isAdmin !== "true") {
     return <Navigate to="/*" />; // Replace '/not-found' with your actual NotFound route
@@ -52,10 +54,10 @@ function App() {
   // Obtener clienteId y clienteEmail desde localStorage
   const clienteId = localStorage.getItem("clienteId");
   const clienteEmail = localStorage.getItem("clienteEmail");
-  const isAdmin = localStorage.getItem("isA");
+  const isAdmin = localStorage.getItem("isAdmin");
 
   const mostrarNavBar = () => {
-    if (isAdmin == "true") {
+    if (isAdmin === "true") {
       return <NavBar />;
     }
     return <NavBarClient />;
@@ -129,9 +131,35 @@ function App() {
           }
         />
         <Route
+          path="/historialPedidos"
+          element={
+            clienteId && clienteEmail ? <Historial /> : <Navigate to="/login" />
+          }
+        />
+        <Route
           path="/mi-cuenta"
           element={
             clienteId && clienteEmail ? <MiCuenta /> : <Navigate to="/login" />
+          }
+        />
+        <Route
+          path="/cuenta-cliente"
+          element={
+            clienteId && clienteEmail ? (
+              <ClienteCuenta />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+        <Route
+          path="/cliente-pedidos"
+          element={
+            clienteId && clienteEmail ? (
+              <MisPedidos />
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         />
         <Route

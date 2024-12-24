@@ -18,7 +18,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       authorizationParams={{
         redirect_uri: window.location.origin,
         audience: "https://dev-6tss1b7wf5huiury.us.auth0.com/api/v2/",
-        scope: "openid profile email",
+        scope: "openid profile email ",
       }}
       onRedirectCallback={onRedirectCallback} // Se pasa la función de redirección
     >

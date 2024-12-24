@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const MisPedidos = () => {
+export const Historial = () => {
   const [pedidos, setPedidos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    const fetchPedidos = async () => {
+    const fetchPedidosEntregados = async () => {
       const clienteId = localStorage.getItem("clienteId");
 
       if (!clienteId) {
@@ -14,27 +15,24 @@ export const MisPedidos = () => {
         setLoading(false);
         return;
       }
-
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/pedidos/${clienteId}/pedidosCliente`
+          `http://localhost:4000/api/pedidos/${clienteId}/pedidosClienteEntregados`
         );
-        const pedidosPendientes = response.data.filter(
-          (pedido) => pedido.estado === "pendiente"
-        );
-        setPedidos(pedidosPendientes);
+        setPedidos(response.data); // Establece los pedidos entregados
         setLoading(false);
       } catch (error) {
-        setError("Error al obtener los pedidos: " + error.message);
+        console.error("Error al obtener pedidos entregados:", error);
+        setError("No se pudieron obtener los pedidos entregados.");
         setLoading(false);
       }
     };
 
-    fetchPedidos();
+    fetchPedidosEntregados();
   }, []);
 
   if (loading) {
-    return <div>Cargando pedidos...</div>;
+    return <div>Cargando historial...</div>;
   }
 
   if (error) {
@@ -43,7 +41,7 @@ export const MisPedidos = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Mis Pedidos</h2>
+      <h2 className="text-center mb-4">Historial de Pedidos</h2>
       {pedidos.length > 0 ? (
         <div className="list-group">
           {pedidos.map((pedido) => (
@@ -80,7 +78,9 @@ export const MisPedidos = () => {
           ))}
         </div>
       ) : (
-        <div className="alert alert-info">No tienes pedidos registrados.</div>
+        <div className="alert alert-info">
+          No hay pedidos entregados en el historial.
+        </div>
       )}
     </div>
   );
