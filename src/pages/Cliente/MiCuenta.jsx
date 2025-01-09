@@ -7,32 +7,43 @@ import UserIcon from "../../assets/iconsCuentaPage/userIcon2.svg?react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 export const MiCuenta = () => {
   const [userData, setUserData] = useState(null);
-  const idUser = localStorage.getItem("clienteId");
-  
+  const [loading, setLoading] = useState(true); // Estado para controlar el loading
 
   useEffect(() => {
-    const getUser = async () => {
-      if (!idUser) {
-        console.error("El ID de usuario no está disponible.");
-        return;
-      }
+    const storedUserData = localStorage.getItem("clienteData");
+    if (storedUserData) {
+      // Si los datos ya están en localStorage, los usamos directamente
+      setUserData(JSON.parse(storedUserData));
+      setLoading(false); // Dejamos de cargar porque ya tenemos los datos
+    } else {
+      // Si no hay datos en localStorage, hacemos la solicitud axios
+      const getUser = async () => {
+        const idUser = localStorage.getItem("clienteId");
+        if (!idUser) {
+          console.error("El ID de usuario no está disponible.");
+          setLoading(false);
+          return;
+        }
 
-      try {
-        const response = await axios.get(
-          `https://socketserver-u5si.onrender.com/api/clientes/${idUser}`
-        );
-        setUserData(response.data);
-      } catch (error) {
-        console.error("Error al obtener los datos del usuario:", error);
-      }
-    };
+        try {
+          const response = await axios.get(
+            `http://localhost:4000/api/cliente/${idUser}`
+          );
+          setUserData(response.data);
+          // Guardamos los datos en localStorage para futuras referencias
+          localStorage.setItem("clienteData", JSON.stringify(response.data));
+        } catch (error) {
+          console.error("Error al obtener los datos del usuario:", error);
+        } finally {
+          setLoading(false); // Dejamos de cargar cuando termine
+        }
+      };
 
-    getUser();
-  }, [idUser]);
-
+      getUser();
+    }
+  }, []);
 
   return (
     <div className="miCuentaPage">
@@ -40,14 +51,16 @@ export const MiCuenta = () => {
         <div className="col-12 col-md-6">
           <div className="col-12">
             <div className="perfilData">
-              {userData ? (
+              {loading ? (
+                <p className="loader">Cargando datos del usuario...</p>
+              ) : userData ? (
                 <div>
                   <h3 className="name">
                     Bienvenido <span>{userData.nombre}</span>{" "}
                   </h3>
                 </div>
               ) : (
-                <p className="loader">Cargando datos del usuario...</p>
+                <p>Error al cargar los datos del usuario.</p>
               )}
             </div>
           </div>
@@ -66,7 +79,7 @@ export const MiCuenta = () => {
             </Link>
 
             <Link className="col-3" to={"/historialPedidos"}>
-              <div className="box" >
+              <div className="box">
                 <HistorialIcon />
               </div>
               <p>Historial</p>
@@ -131,8 +144,6 @@ export const MiCuenta = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };

@@ -15,7 +15,6 @@ export const SoloMenu = () => {
   const [fechaHoy, setFechaHoy] = useState("");
 
   useEffect(() => {
-
     const obtenerFechaHoy = () => {
       const fecha = new Date();
       setFechaHoy(format(fecha, "EEEE dd 'de' MMMM", { locale: es }));
@@ -54,7 +53,7 @@ export const SoloMenu = () => {
               </>
             ) : (
               <>
-                <img src={loading1} alt="" />
+                {/* <img src={loading1} alt="" /> */}
                 <p>Cargando. . .</p>
               </>
             )}

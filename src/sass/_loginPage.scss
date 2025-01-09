@@ -6,18 +6,25 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  .botonn {
+    width: 100%;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
 
-  .btn-menu {
-    position: absolute;
-    top: 20px;
-    left: 15px;
+    border: 1px solid #000000;
+    padding: 14px 10px;
     background-color: transparent;
-    border: 1px solid #181818;
+  }
+  h2 {
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
   }
   .card {
     border: none;
     border-radius: 20px;
-    background-color: #181818;
+    background-color: #18181800;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -32,5 +39,24 @@
   }
   .btn-link {
     color: white;
+  }
+  .redirect-text {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: #1a3309;
+    p {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
   }
 }

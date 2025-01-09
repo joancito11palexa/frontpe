@@ -46,8 +46,7 @@ export const Login = () => {
             "isAdmin",
             response.data.esAdministrador ? "true" : "false"
           );
-
-          // Redirigir al usuario
+ 
           navigate("/mi-cuenta");
         } catch (error) {
           console.error("Error al sincronizar con el servidor:", error);
@@ -65,47 +64,36 @@ export const Login = () => {
     }
   };
 
-  const handleAuth0Logout = () => {
-    logout({ returnTo: window.location.origin });
-    localStorage.clear(); // Limpiar datos del localStorage al cerrar sesión
-  };
+
 
   return (
     <div className="loginPage">
-      <div className="container mt-5">
+      <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <button className="btn-menu" onClick={() => navigate("/")}>
-              Solo ver menú
-            </button>
-
             <div className="card">
               <div className="card-body">
                 <h2 className="text-center">Login</h2>
 
-                <button
-                  className="btn btn-primary w-100 mb-3"
-                  onClick={handleAuth0Login}
-                >
-                  Iniciar sesión con Auth0
+                <button className="botonn btn-auth" onClick={handleAuth0Login}>
+                  Iniciar sesión o registrarse
                 </button>
-
-                {isAuthenticated && (
-                  <div className="mt-3">
-                    <p>Bienvenido, {user?.name}</p>
-                    <button
-                      className="btn btn-danger w-100"
-                      onClick={handleAuth0Logout}
-                    >
-                      Cerrar sesión
-                    </button>
-                  </div>
-                )}
+                <button
+                  className="botonn btn-menu"
+                  onClick={() => navigate("/")}
+                >
+                  Ver menú
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {isAuthenticated && (
+        <div className="redirect-text">
+          <p>Redirigiendo...</p>
+        </div>
+      )}
     </div>
   );
 };

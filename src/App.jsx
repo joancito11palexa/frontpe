@@ -37,6 +37,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const ProtectedRouteAdmin = ({ children }) => {
+  
   const clienteId = localStorage.getItem("clienteId");
   const clienteEmail = localStorage.getItem("clienteEmail");
   const isAdmin = localStorage.getItem("isAdmin");

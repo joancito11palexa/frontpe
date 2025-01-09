@@ -26,25 +26,25 @@ export const ClienteCuenta = () => {
   };
 
   return (
-    <div className="cliente-cuenta-page">
-      <div className="container mt-4">
-        <div className="card mx-auto" style={{ maxWidth: "400px" }}>
-          <div className="card-body text-center">
-            {userData.picture && (
-              <img
-                src={userData.picture}
-                alt="Foto de perfil"
-                className="rounded-circle mb-3"
-                style={{ width: "100px", height: "100px" }}
-              />
-            )}
-            <h3>{userData.clienteName}</h3>
-            <p>{userData.clienteEmail}</p>
+    <div className="clienteCuentaPage">
+      <div className="header">
+        <h3> Tu informacion</h3>
+      </div>
+      <div className="card mx-auto" style={{ maxWidth: "400px" }}>
+        <div className="card-body text-center">
+          {userData.picture && (
+            <img
+              src={userData.picture}
+              referrerPolicy="no-referrer"
+              alt="Foto de perfil"
+            />
+          )}
+          <h3>{userData.clienteName}</h3>
+          <p>{userData.clienteEmail}</p>
 
-            <button className="btn btn-danger mt-3" onClick={handleLogout}>
-              Cerrar sesión
-            </button>
-          </div>
+          <button className="btn btn-danger mt-3" onClick={handleLogout}>
+            Cerrar sesión
+          </button>
         </div>
       </div>
     </div>

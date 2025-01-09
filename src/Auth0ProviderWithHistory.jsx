@@ -8,7 +8,12 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const clientId = "PBixrNlybCXao7YBiGirapBSAAcab1CL";
 
   const onRedirectCallback = (appState) => {
-    navigate("/mi-cuenta");
+    const clienteId = localStorage.getItem("clienteId");
+    // Solo redirigir si los datos aún no están sincronizados
+    if (!clienteId) {
+      console.log("authredirect")
+      navigate("/login");
+    }
   };
 
   return (

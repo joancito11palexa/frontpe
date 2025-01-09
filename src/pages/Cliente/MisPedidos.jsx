@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const MisPedidos = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -42,8 +43,12 @@ export const MisPedidos = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Mis Pedidos</h2>
+    <div className="pedidosClientePage">
+      <div className="header">
+        <h3 className="titulo">Mis Pedidos</h3>
+        <p></p>
+      </div>
+
       {pedidos.length > 0 ? (
         <div className="list-group">
           {pedidos.map((pedido) => (
@@ -80,7 +85,10 @@ export const MisPedidos = () => {
           ))}
         </div>
       ) : (
-        <div className="alert alert-info">No tienes pedidos registrados.</div>
+        <div className="alert">
+          <p>No tienes pedidos registrados.</p>
+          <Link to={"/ver-menu"} className="button" >Ir al menu</Link>
+        </div>
       )}
     </div>
   );

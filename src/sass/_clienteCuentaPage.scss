@@ -1,0 +1,23 @@
+.clienteCuentaPage {
+  min-height: 100vh;
+  padding: 15px;
+  .header {
+    margin-top: 100px;
+    h3 {
+      font-weight: bold;
+      color: black;
+      text-align: left;
+      font-size: 2rem;
+    }
+  }
+  .card {
+    border: 0;
+    background-color: transparent;
+    color: black;
+    img{
+        width: 100px;
+        height: 100px;
+        
+    }
+  }
+}
