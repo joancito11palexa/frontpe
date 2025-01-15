@@ -12720,7 +12720,8 @@ textarea.form-control-lg {
 }
 .miCuentaPage .perfilData h3, .miCuentaPage .perfilData .h3 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #1a3309;
 }
 .miCuentaPage .perfilData h3 span, .miCuentaPage .perfilData .h3 span {
   text-transform: capitalize;
