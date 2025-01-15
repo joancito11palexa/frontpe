@@ -29,7 +29,7 @@ export const MiCuenta = () => {
 
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/cliente/${idUser}`
+            `https://socketserver-u5si.onrender.com/api/cliente/${idUser}`
           );
           setUserData(response.data);
           // Guardamos los datos en localStorage para futuras referencias

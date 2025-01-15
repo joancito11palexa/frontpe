@@ -18,7 +18,7 @@ export const MisPedidos = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/pedidos/${clienteId}/pedidosCliente`
+          `https://socketserver-u5si.onrender.com/api/pedidos/${clienteId}/pedidosCliente`
         );
         const pedidosPendientes = response.data.filter(
           (pedido) => pedido.estado === "pendiente"

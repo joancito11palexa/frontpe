@@ -21,7 +21,7 @@ export const Login = () => {
         try {
           const token = await getAccessTokenSilently();
           const response = await axios.post(
-            "http://localhost:4000/api/clientes/auth0",
+            "https://socketserver-u5si.onrender.com/api/clientes/auth0",
             {
               auth0Id: user.sub,
               email: user.email,

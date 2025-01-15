@@ -77,7 +77,7 @@ export const Menu = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/pedidos/${clienteId}/crear`,
+        `https://socketserver-u5si.onrender.com/api/pedidos/${clienteId}/crear`,
         descripcion
       );
 
@@ -100,8 +100,10 @@ export const Menu = () => {
       <div className="platos-list">
         {platos.length === 0 ? (
           <div className="loader">
-            <img src={loading1} alt="" />
-            <p>Cargando. . .</p>
+            <div class="spinner-border" role="status">
+              <span class="sr-only"></span>
+            </div>
+
           </div>
         ) : (
           <div>
@@ -119,7 +121,12 @@ export const Menu = () => {
                         <p>S/{plato.precio}</p>
                       </div>
                       <div className="col-2">
-                        <button onClick={() => abrirModal(plato)}>+</button>
+                        <button
+                          className="btnAgregar"
+                          onClick={() => abrirModal(plato)}
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -140,24 +147,59 @@ export const Menu = () => {
                         <p>S/{plato.precio}</p>
                       </div>
                       <div className="col-2">
-                        <button onClick={() => abrirModal(plato)}>+</button>
+                        <button
+                          className="btnAgregar"
+                          onClick={() => abrirModal(plato)}
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   </div>
                 ))}
             </div>
+
+            <div className="resumen-pedido">
+              <h5>Resumen de tu Pedido</h5>
+              {pedidoActual.length === 0 ? (
+                <p>No has añadido platos al pedido aún.</p>
+              ) : (
+                <div>
+                  <ul>
+                    {pedidoActual.map((item, index) => (
+                      <li key={index}>
+                        {item.cantidad} x {item.nombre} (S/
+                        {item.precio.toFixed(2)} c/u) - Subtotal: S/
+                        {(item.cantidad * item.precio).toFixed(2)}
+                      </li>
+                    ))}
+                  </ul>
+                  <hr />
+                  <p>
+                    <strong>
+                      Total: S/
+                      {pedidoActual
+                        .reduce(
+                          (total, item) => total + item.cantidad * item.precio,
+                          0
+                        )
+                        .toFixed(2)}
+                    </strong>
+                  </p>
+                  <div className="text-center mt-4">
+                    <Button
+                      variant="success"
+                      onClick={realizarPedido}
+                      disabled={pedidoActual.length === 0}
+                    >
+                      Realizar Pedido
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         )}
-      </div>
-
-      <div className="text-center mt-4">
-        <Button
-          variant="success"
-          onClick={realizarPedido}
-          disabled={pedidoActual.length === 0}
-        >
-          Realizar Pedido
-        </Button>
       </div>
 
       {/* Modal */}

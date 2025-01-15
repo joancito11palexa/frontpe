@@ -3,14 +3,14 @@
   border-radius: 0;
   color: #112206;
   padding-top: 50px;
-  .cuentaBtn{
+  .cuentaBtn {
     position: absolute;
-    top:10px;
+    top: 10px;
     left: 10px;
     color: white;
     border: none;
     background-color: transparent;
-    svg{
+    svg {
       width: 30px;
       height: 30px;
       fill: $tercer-color;
@@ -36,8 +36,9 @@
   }
 
   .platos-list {
+    min-height: 80vh;
     padding: 15px;
-    .loader{
+    .loader {
       padding: 30px;
       text-align: center;
       display: flex;
@@ -45,14 +46,14 @@
       align-items: center;
       flex-direction: column;
       margin-top: 15px;
-      img{
+      img {
         width: 120px;
         height: 120px;
       }
-      p{
+      p {
         margin-top: 10px;
       }
-      svg{
+      svg {
         margin-top: 30px;
         width: 120px;
         height: 120px;
@@ -61,12 +62,34 @@
     }
     h4 {
       margin-top: 30px;
-
     }
     .platos-section {
       p {
-        margin-bottom: 3px;
+        margin: 0;
+        padding: 0;
+      }
+      .plato-item {
+        margin-bottom: 10px;
       }
     }
+    .btnAgregar {
+      border: 0;
+      background-color: $otro-color;
+      color: white;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 40%;
+    }
+  }
+  .resumen-pedido {
+    background-color: $tercer-color;
+    margin-top: 30px;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
   }
 }

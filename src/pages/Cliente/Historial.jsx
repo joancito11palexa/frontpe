@@ -17,7 +17,7 @@ export const Historial = () => {
       }
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/pedidos/${clienteId}/pedidosClienteEntregados`
+          `https://socketserver-u5si.onrender.com/api/pedidos/${clienteId}/pedidosClienteEntregados`
         );
         setPedidos(response.data); // Establece los pedidos entregados
         setLoading(false);

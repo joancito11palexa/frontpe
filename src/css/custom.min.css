@@ -12603,6 +12603,7 @@ textarea.form-control-lg {
   text-transform: capitalize;
 }
 .clienteMenuPage .platos-list {
+  min-height: 80vh;
   padding: 15px;
 }
 .clienteMenuPage .platos-list .loader {
@@ -12631,12 +12632,35 @@ textarea.form-control-lg {
   margin-top: 30px;
 }
 .clienteMenuPage .platos-list .platos-section p {
-  margin-bottom: 3px;
+  margin: 0;
+  padding: 0;
+}
+.clienteMenuPage .platos-list .platos-section .plato-item {
+  margin-bottom: 10px;
+}
+.clienteMenuPage .platos-list .btnAgregar {
+  border: 0;
+  background-color: #963903;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+}
+.clienteMenuPage .resumen-pedido {
+  background-color: #1a3309;
+  margin-top: 30px;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
 }
 
 .navBarClient .logoLink {
   position: absolute;
-  color: black;
+  color: #1a3309;
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
   text-decoration: none;
