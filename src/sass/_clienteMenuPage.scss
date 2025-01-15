@@ -61,7 +61,17 @@
       }
     }
     h4 {
-      margin-top: 30px;
+      // font-family: 'Cormorant SC', serif;
+      font-family: 'Lexend', sans-serif;
+
+
+
+
+      
+
+      border-radius: 20px;
+      font-size: 1.7ñrem;
+      font-weight: bold;
     }
     .platos-section {
       p {
@@ -91,5 +101,12 @@
     border-radius: 15px;
     padding: 20px;
     color: white;
+    ul{
+      list-style: none;
+      padding: 0;
+      li{
+        padding: 0;
+      }
+    }
   }
 }

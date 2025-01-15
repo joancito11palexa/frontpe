@@ -12629,7 +12629,10 @@ textarea.form-control-lg {
   fill: #1a3309;
 }
 .clienteMenuPage .platos-list h4, .clienteMenuPage .platos-list .h4 {
-  margin-top: 30px;
+  font-family: "Lexend", sans-serif;
+  border-radius: 20px;
+  font-size: 1.7ñrem;
+  font-weight: bold;
 }
 .clienteMenuPage .platos-list .platos-section p {
   margin: 0;
@@ -12656,6 +12659,13 @@ textarea.form-control-lg {
   border-radius: 15px;
   padding: 20px;
   color: white;
+}
+.clienteMenuPage .resumen-pedido ul {
+  list-style: none;
+  padding: 0;
+}
+.clienteMenuPage .resumen-pedido ul li {
+  padding: 0;
 }
 
 .navBarClient .logoLink {
