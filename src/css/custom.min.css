@@ -11987,15 +11987,13 @@ textarea.form-control-lg {
 .loginPage .botonn {
   width: 100%;
   margin-top: 20px;
-  color: rgb(0, 0, 0);
-  border: 1px solid #000000;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
   padding: 14px 10px;
-  background-color: transparent;
-}
-.loginPage h2, .loginPage .h2 {
-  color: black;
-  font-weight: bold;
-  font-size: 2rem;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.2rem;
+  background-color: #963903;
 }
 .loginPage .card {
   border: none;
@@ -12005,12 +12003,39 @@ textarea.form-control-lg {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.loginPage .card .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 150px;
+  justify-content: center;
+  color: #1a3309;
+}
+.loginPage .card .header .logo {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #1a3309;
+  text-align: center;
+}
+.loginPage .card .header h1, .loginPage .card .header .h1 {
+  margin: 0px;
+  font-size: 2rem;
+}
+.loginPage .card .header p {
+  margin-top: 5px;
+}
+.loginPage .card .header h2, .loginPage .card .header .h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0px;
+  margin: 0;
+}
 .loginPage input {
   border: none;
 }
 .loginPage .btn-primary {
   border: 1px solid rgba(255, 255, 255, 0.925);
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(2, 0, 0, 0);
   color: #ffffff;
 }
 .loginPage .btn-link {
@@ -12028,10 +12053,8 @@ textarea.form-control-lg {
   z-index: 10;
   background-color: #1a3309;
 }
-.loginPage .redirect-text p {
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 1.3rem;
+.loginPage .redirect-text h1, .loginPage .redirect-text .h1 {
+  font-size: 2rem;
   color: rgb(255, 255, 255);
   text-align: center;
 }
@@ -12577,10 +12600,17 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
 }
-.clienteMenuPage .cuentaBtn {
+.clienteMenuPage .Logo {
   position: absolute;
   top: 10px;
   left: 10px;
+  font-size: 2rem;
+  color: #1a3309;
+}
+.clienteMenuPage .cuentaBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   color: white;
   border: none;
   background-color: transparent;
@@ -12679,6 +12709,7 @@ textarea.form-control-lg {
 .clienteMenuPage .aviso {
   background-color: #963903;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
@@ -12701,21 +12732,17 @@ textarea.form-control-lg {
   color: white;
   border: none;
   border-radius: 20px;
-  width: 70%;
+  width: 80%;
   padding: 10px 15px;
   font-size: 1.1rem;
   text-align: center;
 }
 
-.navBarClient .logoLink {
+.navBarClient .logoLink h1, .navBarClient .logoLink .h1 {
   position: absolute;
   color: #1a3309;
-  font-family: "Pacifico", serif;
-  text-decoration: none;
-  font-size: 2rem;
-  top: 5px;
+  top: 10px;
   left: 15px;
-  letter-spacing: -0.094em;
 }
 .navBarClient .botonParaAbrir {
   position: absolute;
@@ -12972,6 +12999,12 @@ textarea.form-control-lg {
 .clienteCuentaPage .card img {
   width: 100px;
   height: 100px;
+}
+
+.Logo {
+  font-family: "Pacifico", serif;
+  text-decoration: none;
+  letter-spacing: -0.094em;
 }
 
 * {

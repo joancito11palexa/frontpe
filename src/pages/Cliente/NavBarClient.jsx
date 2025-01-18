@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom"; // Importar Link para las rutas
 import BtnBarIcon from "../../assets/btnBar.svg?react";
-
+import { Logo } from "../Logo.jsx";
 export const NavBarClient = () => {
   const offcanvasRef = useRef(null);
 
@@ -14,9 +14,9 @@ export const NavBarClient = () => {
 
   return (
     <div className="navBarClient">
-      <a href="" className="logoLink">
-        Jessy
-      </a>
+      <Link to={"/"} className="logoLink">
+        <Logo />
+      </Link>
       <button
         className="btn botonParaAbrir"
         type="button"
@@ -49,6 +49,11 @@ export const NavBarClient = () => {
         <div className="offcanvas-body">
           <ul>
             <li>
+              <Link to="/" className="btn btn-link" onClick={closeOffcanvas}>
+                Inicio
+              </Link>
+            </li>
+            <li>
               <Link
                 to="/ver-menu"
                 className="btn btn-link"
@@ -57,15 +62,7 @@ export const NavBarClient = () => {
                 Menú
               </Link>
             </li>
-            <li>
-              <Link
-                to="/mi-cuenta"
-                className="btn btn-link"
-                onClick={closeOffcanvas}
-              >
-                Mi cuenta
-              </Link>
-            </li>
+
             <li>
               <Link
                 to="/mis-pedidos"
@@ -73,6 +70,25 @@ export const NavBarClient = () => {
                 onClick={closeOffcanvas}
               >
                 Mis pedidos
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/mi-historial"
+                className="btn btn-link"
+                onClick={closeOffcanvas}
+              >
+                Mi historial
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/cuenta-cliente"
+                className="btn btn-link"
+                onClick={closeOffcanvas}
+              >
+                Mi cuenta
               </Link>
             </li>
           </ul>

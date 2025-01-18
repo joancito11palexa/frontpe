@@ -10,17 +10,16 @@
   .botonn {
     width: 100%;
     margin-top: 20px;
-    color: rgb(0, 0, 0);
-
-    border: 1px solid #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
     padding: 14px 10px;
-    background-color: transparent;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.2rem;
+    background-color: $otro-color;
+
   }
-  h2 {
-    color: black;
-    font-weight: bold;
-    font-size: 2rem;
-  }
+
   .card {
     border: none;
     border-radius: 20px;
@@ -28,13 +27,42 @@
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
+    .header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 150px;
+      justify-content: center;
+      color: $tercer-color;
+      .logo{
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid $tercer-color;
+        text-align: center;
+      }
+      h1{
+        margin: 0px;
+        font-size: 2rem;
+      }
+      p{
+        margin-top: 5px;
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        padding: 0px;
+        margin: 0;
+
+      }
+
+    }
   }
   input {
     border: none;
   }
   .btn-primary {
     border: 1px solid rgba(255, 255, 255, 0.925);
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(2, 0, 0, 0);
     color: #ffffff;
   }
   .btn-link {
@@ -51,11 +79,9 @@
     align-items: center;
     z-index: 10;
     background-color: #1a3309;
-    p {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.3rem;
-      color: rgb(255, 255, 255);
+    h1 {
+      font-size: 2rem;
+      color: rgb(255, 255, 255) ;
       text-align: center;
     }
   }

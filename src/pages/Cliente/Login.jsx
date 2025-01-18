@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+import { Logo } from "../Logo";
 
 export const Login = () => {
   const {
@@ -46,7 +47,7 @@ export const Login = () => {
             "isAdmin",
             response.data.esAdministrador ? "true" : "false"
           );
- 
+
           navigate("/mi-cuenta");
         } catch (error) {
           console.error("Error al sincronizar con el servidor:", error);
@@ -64,8 +65,6 @@ export const Login = () => {
     }
   };
 
-
-
   return (
     <div className="loginPage">
       <div className="container">
@@ -73,7 +72,14 @@ export const Login = () => {
           <div className="col-md-6">
             <div className="card">
               <div className="card-body">
-                <h2 className="text-center">Login</h2>
+                <div className="header">
+                  <div className="logo">
+                  <Logo />
+                  <p>Restaurante</p>
+                  </div>
+
+                  <h2 className="text-center">Login</h2>
+                </div>
 
                 <button className="botonn btn-auth" onClick={handleAuth0Login}>
                   Iniciar sesión o registrarse
@@ -91,7 +97,7 @@ export const Login = () => {
       </div>
       {isAuthenticated && (
         <div className="redirect-text">
-          <p>Redirigiendo...</p>
+          <Logo />
         </div>
       )}
     </div>

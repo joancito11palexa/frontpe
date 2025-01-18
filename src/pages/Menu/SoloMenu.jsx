@@ -8,6 +8,7 @@ import loading1 from "../../assets/gifs/loading1.gif";
 import MenuIcon1 from "../../assets/menuIcon1.svg?react";
 import UserIcon1 from "../../assets/userIcon1.svg?react";
 import { Link } from "react-router-dom";
+import { Logo } from "../Logo.jsx";
 
 export const SoloMenu = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export const SoloMenu = () => {
 
   return (
     <div className="clienteMenuPage">
+      <Logo />
       <button
         className="cuentaBtn"
         onClick={() => (window.location.href = "/login")}
@@ -101,9 +103,7 @@ export const SoloMenu = () => {
               <p>Inicia sesión para realizar tus pedidos</p>
               <Link to={"/login"}>Comenzar</Link>
             </div>
-
           </>
-          
         )}
       </div>
     </div>
