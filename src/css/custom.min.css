@@ -12,6 +12,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Funnel+Display:wght@300..800&family=Lexend:wght@100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Funnel+Display:wght@300..800&family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+SC:wght@300;400;500;600;700&family=Funnel+Display:wght@300..800&family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -12572,6 +12573,9 @@ textarea.form-control-lg {
   border-radius: 0;
   color: #112206;
   padding-top: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .clienteMenuPage .cuentaBtn {
   position: absolute;
@@ -12591,6 +12595,9 @@ textarea.form-control-lg {
   height: 50px;
   display: none;
 }
+.clienteMenuPage .encabezado {
+  flex-shrink: 0;
+}
 .clienteMenuPage .encabezado h3, .clienteMenuPage .encabezado .h3 {
   text-align: center;
   font-size: 3rem;
@@ -12603,8 +12610,10 @@ textarea.form-control-lg {
   text-transform: capitalize;
 }
 .clienteMenuPage .platos-list {
-  min-height: 80vh;
+  flex-grow: 1;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 .clienteMenuPage .platos-list .loader {
   padding: 30px;
@@ -12631,7 +12640,7 @@ textarea.form-control-lg {
 .clienteMenuPage .platos-list h4, .clienteMenuPage .platos-list .h4 {
   font-family: "Lexend", sans-serif;
   border-radius: 20px;
-  font-size: 1.7ñrem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 .clienteMenuPage .platos-list .platos-section p {
@@ -12667,12 +12676,41 @@ textarea.form-control-lg {
 .clienteMenuPage .resumen-pedido ul li {
   padding: 0;
 }
+.clienteMenuPage .aviso {
+  background-color: #963903;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  flex-grow: 1;
+  color: white;
+  height: 200px;
+}
+.clienteMenuPage .aviso p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "League Spartan", sans-serif;
+}
+.clienteMenuPage .aviso a {
+  background-color: #1a3309;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 70%;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  text-align: center;
+}
 
 .navBarClient .logoLink {
   position: absolute;
   color: #1a3309;
-  font-family: "League Spartan", sans-serif;
-  font-weight: 700;
+  font-family: "Pacifico", serif;
   text-decoration: none;
   font-size: 2rem;
   top: 5px;

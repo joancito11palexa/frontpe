@@ -15,7 +15,7 @@ export const NavBarClient = () => {
   return (
     <div className="navBarClient">
       <a href="" className="logoLink">
-        aitten
+        Jessy
       </a>
       <button
         className="btn botonParaAbrir"

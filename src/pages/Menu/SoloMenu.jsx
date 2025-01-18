@@ -7,6 +7,7 @@ import { es } from "date-fns/locale";
 import loading1 from "../../assets/gifs/loading1.gif";
 import MenuIcon1 from "../../assets/menuIcon1.svg?react";
 import UserIcon1 from "../../assets/userIcon1.svg?react";
+import { Link } from "react-router-dom";
 
 export const SoloMenu = () => {
   const dispatch = useDispatch();
@@ -53,14 +54,14 @@ export const SoloMenu = () => {
               </>
             ) : (
               <>
-                {/* <img src={loading1} alt="" /> */}
-                <p>Cargando. . .</p>
+                <div class="spinner-border" role="status">
+                  <span class="sr-only"></span>
+                </div>
               </>
             )}
           </div>
         ) : (
-          <div>
-            {/* Entradas */}
+          <>
             <h4>Entradas</h4>
             <div className="platos-section">
               {platos
@@ -96,7 +97,13 @@ export const SoloMenu = () => {
                   </div>
                 ))}
             </div>
-          </div>
+            <div className="aviso">
+              <p>Inicia sesión para realizar tus pedidos</p>
+              <Link to={"/login"}>Comenzar</Link>
+            </div>
+
+          </>
+          
         )}
       </div>
     </div>

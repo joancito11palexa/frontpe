@@ -3,6 +3,9 @@
   border-radius: 0;
   color: #112206;
   padding-top: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   .cuentaBtn {
     position: absolute;
     top: 10px;
@@ -22,6 +25,7 @@
     display: none;
   }
   .encabezado {
+    flex-shrink: 0;
     h3 {
       text-align: center;
       font-size: 3rem;
@@ -36,8 +40,10 @@
   }
 
   .platos-list {
-    min-height: 80vh;
+    flex-grow: 1;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
     .loader {
       padding: 30px;
       text-align: center;
@@ -62,15 +68,10 @@
     }
     h4 {
       // font-family: 'Cormorant SC', serif;
-      font-family: 'Lexend', sans-serif;
-
-
-
-
-      
+      font-family: "Lexend", sans-serif;
 
       border-radius: 20px;
-      font-size: 1.7ñrem;
+      font-size: 1.7rem;
       font-weight: bold;
     }
     .platos-section {
@@ -101,12 +102,43 @@
     border-radius: 15px;
     padding: 20px;
     color: white;
-    ul{
+    ul {
       list-style: none;
       padding: 0;
-      li{
+      li {
         padding: 0;
       }
+    }
+  }
+  .aviso {
+    background-color: $otro-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -15px;
+    flex-grow: 1;
+    color: white;
+    height: 200px;
+
+    p {
+      font-size: 1.6rem;
+      font-weight: bold;
+      font-family: "League Spartan", sans-serif;
+    }
+    a {
+      background-color: $tercer-color;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      width: 70%;
+      padding: 10px 15px;
+      font-size: 1.1rem;
+      text-align: center;
     }
   }
 }
