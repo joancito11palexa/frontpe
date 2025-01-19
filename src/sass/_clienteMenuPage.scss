@@ -109,12 +109,29 @@
     border-radius: 15px;
     padding: 20px;
     color: white;
+    h5{
+      font-size: 1.2rem;
+    }
     ul {
       list-style: none;
       padding: 0;
       li {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 0;
       }
+    }
+    .totalPedido{
+      text-align: right;
+    }
+    button{
+      background-color: $otro-color;
+      border-radius: 20px;
+      padding: 15px 30px;
+      border: none;
     }
   }
   .aviso {

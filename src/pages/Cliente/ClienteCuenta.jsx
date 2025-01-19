@@ -27,11 +27,9 @@ export const ClienteCuenta = () => {
 
   return (
     <div className="clienteCuentaPage">
-      <div className="header">
-        <h3> Tu informacion</h3>
-      </div>
       <div className="card mx-auto" style={{ maxWidth: "400px" }}>
         <div className="card-body text-center">
+          <h3 className="titulo" >{userData.clienteName}</h3>
           {userData.picture && (
             <img
               src={userData.picture}
@@ -39,7 +37,7 @@ export const ClienteCuenta = () => {
               alt="Foto de perfil"
             />
           )}
-          <h3>{userData.clienteName}</h3>
+
           <p>{userData.clienteEmail}</p>
 
           <button className="btn btn-danger mt-3" onClick={handleLogout}>

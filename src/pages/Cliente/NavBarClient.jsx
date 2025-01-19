@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom"; // Importar Link para las rutas
+import React, { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom"; // Importar Link para las rutas
 import BtnBarIcon from "../../assets/btnBar.svg?react";
 import { Logo } from "../Logo.jsx";
 export const NavBarClient = () => {
+  const {pathname} = useLocation(); 
   const offcanvasRef = useRef(null);
-
+  const formattedPath = pathname.replace(/\//g, "-").substring(1);
   const closeOffcanvas = () => {
     const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(
       offcanvasRef.current
@@ -12,8 +13,10 @@ export const NavBarClient = () => {
     bootstrapOffcanvas.hide();
   };
 
+
+
   return (
-    <div className="navBarClient">
+    <div className={`navBarClient ` + `navBar`+formattedPath}>
       <Link to={"/"} className="logoLink">
         <Logo />
       </Link>
@@ -74,7 +77,7 @@ export const NavBarClient = () => {
             </li>
             <li>
               <Link
-                to="/mi-historial"
+                to="/historialPedidos"
                 className="btn btn-link"
                 onClick={closeOffcanvas}
               >

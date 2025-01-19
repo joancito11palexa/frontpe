@@ -1,33 +1,44 @@
-.pedidosClientePage{
-    min-height: 100vh;
-    padding: 15px;
-    .header{
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h3{
-            color: black;
-            font-weight: bold;
-        }
+.pedidosClientePage {
+  min-height: 100vh;
+  padding: 15px;
+  background-color: $background-color2;
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    h3 {
+      color: black;
+      font-weight: bold;
     }
-    .alert{
-        height: 200px;
+  }
+  .list-group {
+    .list-group-item {
+        margin-bottom: 20px;
+        color: white;
+        padding: 30px;
+        border-radius: 13%;
 
-        color: rgb(0, 0, 0);
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border-radius: 20px;
-        .button{
-            background-color: $otro-color;
-            border: 0;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            
-        }
+      background-color: $otro-color;
     }
+  }
+  .alert {
+    height: 200px;
+
+    color: rgb(0, 0, 0);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    .button {
+      background-color: $otro-color;
+      border: 0;
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+    }
+  }
 }

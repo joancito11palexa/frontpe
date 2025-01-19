@@ -113,7 +113,6 @@ export const Menu = () => {
             <div class="spinner-border" role="status">
               <span class="sr-only"></span>
             </div>
-
           </div>
         ) : (
           <div>
@@ -170,7 +169,7 @@ export const Menu = () => {
             </div>
 
             <div className="resumen-pedido">
-              <h5>Resumen de tu Pedido</h5>
+              <h5 className="titulo">Resumen de tu Pedido</h5>
               {pedidoActual.length === 0 ? (
                 <p>No has añadido platos al pedido aún.</p>
               ) : (
@@ -178,14 +177,18 @@ export const Menu = () => {
                   <ul>
                     {pedidoActual.map((item, index) => (
                       <li key={index}>
-                        {item.cantidad} x {item.nombre} (S/
-                        {item.precio.toFixed(2)} c/u) - Subtotal: S/
-                        {(item.cantidad * item.precio).toFixed(2)}
+                        <div>
+                          {item.cantidad} x {item.nombre}
+                        </div>
+                        <div>
+                          Subtotal: S/
+                          {(item.cantidad * item.precio).toFixed(2)}
+                        </div>
                       </li>
                     ))}
                   </ul>
                   <hr />
-                  <p>
+                  <p className="totalPedido">
                     <strong>
                       Total: S/
                       {pedidoActual
@@ -212,38 +215,52 @@ export const Menu = () => {
         )}
       </div>
 
-
-      <Modal show={showModal} onHide={cerrarModal} centered className="menuModal">
-      <Modal.Header closeButton>
-        <Modal.Title>Agregar {platoSeleccionado?.nombre}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-          <Form.Group controlId="cantidad">
-            <Form.Label>Cantidad</Form.Label>
-            <div className="d-flex align-items-center">
-              <Button variant="outline-secondary" onClick={decrementarCantidad} disabled={cantidad <= 1}>-</Button>
-              <Form.Control
-                type="number"
-                min="1"
-                value={cantidad}
-                onChange={(e) => setCantidad(e.target.value)}
-       
-              />
-              <Button variant="outline-secondary" onClick={incrementarCantidad}>+</Button>
-            </div>
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={cerrarModal}>
-          Cancelar
-        </Button>
-        <Button variant="primary" onClick={agregarAPedido}>
-          Agregar
-        </Button>
-      </Modal.Footer>
-    </Modal>
+      <Modal
+        show={showModal}
+        onHide={cerrarModal}
+        centered
+        className="menuModal"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Agregar {platoSeleccionado?.nombre}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="cantidad">
+              <Form.Label>Cantidad</Form.Label>
+              <div className="d-flex align-items-center">
+                <Button
+                  variant="outline-secondary"
+                  onClick={decrementarCantidad}
+                  disabled={cantidad <= 1}
+                >
+                  -
+                </Button>
+                <Form.Control
+                  type="number"
+                  min="1"
+                  value={cantidad}
+                  onChange={(e) => setCantidad(e.target.value)}
+                />
+                <Button
+                  variant="outline-secondary"
+                  onClick={incrementarCantidad}
+                >
+                  +
+                </Button>
+              </div>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={cerrarModal}>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={agregarAPedido}>
+            Agregar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

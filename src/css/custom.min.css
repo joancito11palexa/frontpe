@@ -12699,12 +12699,29 @@ textarea.form-control-lg {
   padding: 20px;
   color: white;
 }
+.clienteMenuPage .resumen-pedido h5, .clienteMenuPage .resumen-pedido .h5 {
+  font-size: 1.2rem;
+}
 .clienteMenuPage .resumen-pedido ul {
   list-style: none;
   padding: 0;
 }
 .clienteMenuPage .resumen-pedido ul li {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 0;
+}
+.clienteMenuPage .resumen-pedido .totalPedido {
+  text-align: right;
+}
+.clienteMenuPage .resumen-pedido button {
+  background-color: #963903;
+  border-radius: 20px;
+  padding: 15px 30px;
+  border: none;
 }
 .clienteMenuPage .aviso {
   background-color: #963903;
@@ -12807,6 +12824,9 @@ textarea.form-control-lg {
   color: #1a3309;
   top: 10px;
   left: 15px;
+}
+.navBarClient .btn-link:active {
+  color: white !important;
 }
 .navBarClient .botonParaAbrir {
   position: absolute;
@@ -13015,16 +13035,25 @@ textarea.form-control-lg {
 .pedidosClientePage {
   min-height: 100vh;
   padding: 15px;
+  background-color: #f3f4ed;
 }
 .pedidosClientePage .header {
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 .pedidosClientePage .header h3, .pedidosClientePage .header .h3 {
   color: black;
   font-weight: bold;
+}
+.pedidosClientePage .list-group .list-group-item {
+  margin-bottom: 20px;
+  color: white;
+  padding: 30px;
+  border-radius: 13%;
+  background-color: #963903;
 }
 .pedidosClientePage .alert {
   height: 200px;
@@ -13045,6 +13074,7 @@ textarea.form-control-lg {
 }
 
 .clienteCuentaPage {
+  background-color: rgb(8, 8, 8);
   min-height: 100vh;
   padding: 15px;
 }
@@ -13053,24 +13083,75 @@ textarea.form-control-lg {
 }
 .clienteCuentaPage .header h3, .clienteCuentaPage .header .h3 {
   font-weight: bold;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: left;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 .clienteCuentaPage .card {
+  margin-top: 60px;
   border: 0;
-  background-color: transparent;
-  color: black;
+  background-color: rgba(71, 71, 71, 0.329);
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}
+.clienteCuentaPage .card h3, .clienteCuentaPage .card .h3 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
 }
 .clienteCuentaPage .card img {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin: 10px;
+}
+.clienteCuentaPage .card button {
+  color: white;
+  background-color: rgba(92, 92, 92, 0.473);
+  border-radius: 20px;
+  padding: 15px 30px;
+  border: none;
+}
+
+.navBarcuenta-cliente .logoLink h1, .navBarcuenta-cliente .logoLink .h1 {
+  color: white;
 }
 
 .Logo {
   font-family: "Pacifico", serif;
   text-decoration: none;
   letter-spacing: -0.094em;
+}
+
+.clienteHistorialPage {
+  min-height: 100vh;
+  padding: 15px;
+  background-color: #f3f4ed;
+}
+.clienteHistorialPage .loading, .clienteHistorialPage .error {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.clienteHistorialPage .header {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.clienteHistorialPage .header h2, .clienteHistorialPage .header .h2 {
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  font-size: 2rem;
+}
+.clienteHistorialPage .list-group-item {
+  background-color: #1a3309;
+  color: white;
+  border: none;
+  padding: 30px;
+  border-radius: 13% !important;
 }
 
 * {
@@ -13081,7 +13162,12 @@ textarea.form-control-lg {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: white;
+}
+
+.titulo {
+  font-family: "league spartan";
 }
 
 button {

@@ -7,6 +7,11 @@
       left: 15px;
     }
   }
+  .btn-link {
+    &:active {
+      color: white !important;
+    }
+  }
   .botonParaAbrir {
     position: absolute;
     top: 5px;
