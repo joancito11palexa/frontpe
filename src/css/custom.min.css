@@ -12738,6 +12738,70 @@ textarea.form-control-lg {
   text-align: center;
 }
 
+.menuModal .modal-dialog .modal-content {
+  background-color: #1a3309;
+  border-radius: 20px;
+  color: white;
+}
+.menuModal .modal-dialog .modal-content .btn-close {
+  background-color: transparent;
+  color: white;
+  fill: white;
+  display: none;
+}
+.menuModal .modal-dialog .modal-content button {
+  background-color: #963903;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+.menuModal .modal-dialog .modal-content .modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.menuModal .modal-dialog .modal-content .modal-body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuModal .modal-dialog .modal-content .modal-body input {
+  border: none;
+  border-radius: 20px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  margin: 0 15px;
+}
+.menuModal .modal-dialog .modal-content .modal-body input[type=number]::-webkit-outer-spin-button,
+.menuModal .modal-dialog .modal-content .modal-body input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.menuModal .modal-dialog .modal-content .modal-body input[type=number] {
+  -moz-appearance: textfield; /* Para Firefox */
+}
+.menuModal .modal-dialog .modal-content .modal-body button {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuModal .modal-dialog .modal-content .modal-footer {
+  border: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navBarClient .logoLink h1, .navBarClient .logoLink .h1 {
   position: absolute;
   color: #1a3309;
@@ -12836,7 +12900,7 @@ textarea.form-control-lg {
 }
 .miCuentaPage .contenedorBox p {
   margin-top: 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: "League Spartan", sans-serif;
   text-align: center;
   color: black;

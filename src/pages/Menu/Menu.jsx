@@ -44,6 +44,16 @@ export const Menu = () => {
     setPlatoSeleccionado(null);
   };
 
+  const incrementarCantidad = () => {
+    setCantidad((prevCantidad) => prevCantidad + 1);
+  };
+
+  const decrementarCantidad = () => {
+    if (cantidad > 1) {
+      setCantidad((prevCantidad) => prevCantidad - 1);
+    }
+  };
+
   const agregarAPedido = () => {
     const nuevoItem = {
       id: platoSeleccionado.id,
@@ -202,33 +212,38 @@ export const Menu = () => {
         )}
       </div>
 
-      {/* Modal */}
-      <Modal show={showModal} onHide={cerrarModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Agregar {platoSeleccionado?.nombre}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group controlId="cantidad">
-              <Form.Label>Cantidad</Form.Label>
+
+      <Modal show={showModal} onHide={cerrarModal} centered className="menuModal">
+      <Modal.Header closeButton>
+        <Modal.Title>Agregar {platoSeleccionado?.nombre}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group controlId="cantidad">
+            <Form.Label>Cantidad</Form.Label>
+            <div className="d-flex align-items-center">
+              <Button variant="outline-secondary" onClick={decrementarCantidad} disabled={cantidad <= 1}>-</Button>
               <Form.Control
                 type="number"
                 min="1"
                 value={cantidad}
                 onChange={(e) => setCantidad(e.target.value)}
+       
               />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={cerrarModal}>
-            Cancelar
-          </Button>
-          <Button variant="primary" onClick={agregarAPedido}>
-            Agregar
-          </Button>
-        </Modal.Footer>
-      </Modal>
+              <Button variant="outline-secondary" onClick={incrementarCantidad}>+</Button>
+            </div>
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={cerrarModal}>
+          Cancelar
+        </Button>
+        <Button variant="primary" onClick={agregarAPedido}>
+          Agregar
+        </Button>
+      </Modal.Footer>
+    </Modal>
     </div>
   );
 };

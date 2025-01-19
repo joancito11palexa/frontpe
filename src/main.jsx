@@ -5,6 +5,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store/store.js";
 
 import "./css/custom.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.esm.js"
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import * as bootstrap from "bootstrap";
 import App from "./App.jsx";
 import Auth0ProviderWithHistory from "./Auth0ProviderWithHistory.jsx";

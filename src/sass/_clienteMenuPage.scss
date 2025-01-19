@@ -150,3 +150,74 @@
     }
   }
 }
+
+.menuModal {
+  .modal-dialog {
+    .modal-content {
+      background-color: $tercer-color;
+      border-radius: 20px;
+      color: white;
+
+      .btn-close {
+        background-color: transparent;
+        color: white;
+        fill: white;
+        display: none;
+      }
+      button {
+        background-color: $otro-color;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 20px;
+      }
+      .modal-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+      }
+
+      .modal-body {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input {
+          border: none;
+          border-radius: 20px;
+          height: 60px;
+          width: 60px;
+          text-align: center;
+          margin: 0 15px;
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type="number"] {
+          -moz-appearance: textfield; /* Para Firefox */
+        }
+        button {
+          font-size: 1.5rem;
+          color: white;
+          font-weight: bold;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .modal-footer {
+        border: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

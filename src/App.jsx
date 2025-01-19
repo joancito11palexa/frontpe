@@ -23,6 +23,7 @@ import { MisPedidos } from "./pages/Cliente/MisPedidos";
 import { LoaderPage } from "./pages/LoaderPage/LoaderPage";
 import { ClienteCuenta } from "./pages/Cliente/ClienteCuenta";
 import { Historial } from "./pages/Cliente/Historial";
+
 // Componente de ruta protegida
 const ProtectedRoute = ({ children }) => {
   const clienteId = localStorage.getItem("clienteId");
